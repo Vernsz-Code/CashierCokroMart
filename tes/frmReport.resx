@@ -121,7 +121,7 @@
   <data name="SEARCH.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        2AAAAdgB+lymcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUxSURBVHhe7ZpL
+        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUxSURBVHhe7ZpL
         aCRVFIajO3UhggtHcHRciCAooiBuBxREEBQfuFAQxJULF6OgKIqzEXHnA5yFblyIIAiuHNDY6SZBJxKD
         mEysx723M/1KOpn0pB/pR7o8p3JKmvJ09eveSrqpHz4IdPc9/zl135W5RIkSJdIppdQt/wjxiO2ql20p
         P7SE+AixXfmeLdRr+NlqsXgTfX02dFnKM5DgOVvIJaALeAM4BFahMG+7rnsnNTN9AvMPwFP9AZIZJul+
@@ -169,9 +169,6 @@
     <value>True</value>
   </metadata>
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

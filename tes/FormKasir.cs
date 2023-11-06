@@ -44,7 +44,7 @@ namespace tes
                     }
                     else
                     {
-                        lbl_NOFAKTUR.Text = "1000";
+                        lbl_NOFAKTUR.Text = "1";
                     }
                 }
             }
@@ -111,6 +111,7 @@ namespace tes
                         {
                             string kodeBarang = reader["kode_brg"].ToString();
                             string namaBarang = reader["nama_brg"].ToString();
+                            string stok = reader["stok_akhir"].ToString();
                             decimal hargaJual = Convert.ToDecimal(reader["jual"]);
                             decimal markUp = Convert.ToDecimal(reader["mark_up"]);
 
@@ -119,7 +120,7 @@ namespace tes
 
                             Image deleteIcon = Properties.Resources.icons8_delete_24px_1;
 
-                            dgv.Rows.Add(kodeBarang, namaBarang, hargaJual, qty, "0", "0", subtotal, markUp, markUp, deleteIcon);
+                            dgv.Rows.Add(kodeBarang, namaBarang, hargaJual, qty, "0", "0", subtotal, stok, markUp, markUp, deleteIcon);
                             txtScan.Text = "";
                         }
                         else

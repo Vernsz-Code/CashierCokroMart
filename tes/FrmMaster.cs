@@ -128,7 +128,7 @@ namespace tes
                                 string labaRupiah = laba.ToString("C", new CultureInfo("id-ID"));
                                 string hartaRupiah = harta.ToString("C", new CultureInfo("id-ID"));
 
-                                dgv.Rows.Add(no, kode_brg, nama_brg, stok_awal, stok_masuk, stok_keluar, stok_akhir, beliRupiah, jualRupiah, markUpRupiah, pendapatanRupiah, labaRupiah, hartaRupiah, persentase);
+                                dgv.Rows.Add(no, kode_brg, nama_brg, stok_awal, stok_masuk, stok_keluar, stok_akhir, "-", beliRupiah, jualRupiah, markUpRupiah, pendapatanRupiah, labaRupiah, hartaRupiah, persentase);
                             }
                         }
                     }

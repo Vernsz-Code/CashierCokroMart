@@ -47,16 +47,6 @@
             this.lbl_TotalBarang = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.KodeBarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamaBarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HargaJual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarkUp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Laba = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtScan = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,6 +54,17 @@
             this.txtBayar = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnBayar = new Guna.UI2.WinForms.Guna2Button();
+            this.KodeBarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamaBarang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HargaJual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarkUp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Laba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -269,6 +270,7 @@
             this.DiscPercent,
             this.Disc,
             this.Subtotal,
+            this.Stok,
             this.MarkUp,
             this.Laba,
             this.btnDelete});
@@ -323,74 +325,6 @@
             this.dgv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_CellFormatting);
             this.dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellValueChanged);
             this.dgv.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_RowsAdded);
-            // 
-            // KodeBarang
-            // 
-            this.KodeBarang.HeaderText = "Kode Barang";
-            this.KodeBarang.MinimumWidth = 6;
-            this.KodeBarang.Name = "KodeBarang";
-            this.KodeBarang.ReadOnly = true;
-            // 
-            // NamaBarang
-            // 
-            this.NamaBarang.FillWeight = 200F;
-            this.NamaBarang.HeaderText = "Nama Barang";
-            this.NamaBarang.MinimumWidth = 6;
-            this.NamaBarang.Name = "NamaBarang";
-            this.NamaBarang.ReadOnly = true;
-            // 
-            // HargaJual
-            // 
-            this.HargaJual.HeaderText = "Harga";
-            this.HargaJual.MinimumWidth = 6;
-            this.HargaJual.Name = "HargaJual";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Qty";
-            this.Qty.MinimumWidth = 6;
-            this.Qty.Name = "Qty";
-            // 
-            // DiscPercent
-            // 
-            this.DiscPercent.HeaderText = "Diskon %";
-            this.DiscPercent.MinimumWidth = 6;
-            this.DiscPercent.Name = "DiscPercent";
-            // 
-            // Disc
-            // 
-            this.Disc.HeaderText = "Diskon Rp";
-            this.Disc.MinimumWidth = 6;
-            this.Disc.Name = "Disc";
-            this.Disc.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.MinimumWidth = 6;
-            this.Subtotal.Name = "Subtotal";
-            // 
-            // MarkUp
-            // 
-            this.MarkUp.HeaderText = "Mark-Up";
-            this.MarkUp.MinimumWidth = 6;
-            this.MarkUp.Name = "MarkUp";
-            this.MarkUp.Visible = false;
-            // 
-            // Laba
-            // 
-            this.Laba.HeaderText = "Laba";
-            this.Laba.MinimumWidth = 6;
-            this.Laba.Name = "Laba";
-            this.Laba.Visible = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FillWeight = 50F;
-            this.btnDelete.HeaderText = "";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
             // 
             // txtScan
             // 
@@ -514,6 +448,80 @@
             this.btnBayar.TabIndex = 23;
             this.btnBayar.Click += new System.EventHandler(this.btnBayar_Click);
             // 
+            // KodeBarang
+            // 
+            this.KodeBarang.HeaderText = "Kode Barang";
+            this.KodeBarang.MinimumWidth = 6;
+            this.KodeBarang.Name = "KodeBarang";
+            this.KodeBarang.ReadOnly = true;
+            // 
+            // NamaBarang
+            // 
+            this.NamaBarang.FillWeight = 200F;
+            this.NamaBarang.HeaderText = "Nama Barang";
+            this.NamaBarang.MinimumWidth = 6;
+            this.NamaBarang.Name = "NamaBarang";
+            this.NamaBarang.ReadOnly = true;
+            // 
+            // HargaJual
+            // 
+            this.HargaJual.HeaderText = "Harga";
+            this.HargaJual.MinimumWidth = 6;
+            this.HargaJual.Name = "HargaJual";
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "Qty";
+            this.Qty.MinimumWidth = 6;
+            this.Qty.Name = "Qty";
+            // 
+            // DiscPercent
+            // 
+            this.DiscPercent.HeaderText = "Diskon %";
+            this.DiscPercent.MinimumWidth = 6;
+            this.DiscPercent.Name = "DiscPercent";
+            // 
+            // Disc
+            // 
+            this.Disc.HeaderText = "Diskon Rp";
+            this.Disc.MinimumWidth = 6;
+            this.Disc.Name = "Disc";
+            this.Disc.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.MinimumWidth = 6;
+            this.Subtotal.Name = "Subtotal";
+            // 
+            // Stok
+            // 
+            this.Stok.HeaderText = "Stok";
+            this.Stok.MinimumWidth = 6;
+            this.Stok.Name = "Stok";
+            // 
+            // MarkUp
+            // 
+            this.MarkUp.HeaderText = "Mark-Up";
+            this.MarkUp.MinimumWidth = 6;
+            this.MarkUp.Name = "MarkUp";
+            this.MarkUp.Visible = false;
+            // 
+            // Laba
+            // 
+            this.Laba.HeaderText = "Laba";
+            this.Laba.MinimumWidth = 6;
+            this.Laba.Name = "Laba";
+            this.Laba.Visible = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FillWeight = 50F;
+            this.btnDelete.HeaderText = "";
+            this.btnDelete.MinimumWidth = 6;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            // 
             // FormKasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -566,6 +574,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_Kembalian;
         private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Button btnBayar;
         private System.Windows.Forms.DataGridViewTextBoxColumn KodeBarang;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamaBarang;
         private System.Windows.Forms.DataGridViewTextBoxColumn HargaJual;
@@ -573,9 +582,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscPercent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Disc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stok;
         private System.Windows.Forms.DataGridViewTextBoxColumn MarkUp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Laba;
         private System.Windows.Forms.DataGridViewImageColumn btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnBayar;
     }
 }
