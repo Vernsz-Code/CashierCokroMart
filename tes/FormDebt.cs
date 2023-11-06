@@ -24,66 +24,88 @@ namespace tes
         {
             InitializeComponent();
         }
-
-        private void loadData()
+        private void GetDataByDate()
         {
-            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};AllowUserVariables=true;";
-            string query = "select kode_brg, nama_brg, hargaBeli, masukBox, distributor, totalHarga, status, Tunai from tb_stok where payment = 'Kredit'";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-            using (MySqlCommand cmd = new MySqlCommand(query, connection))
-            {
-                try
-                {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        int i = 0;
-                        if (reader.HasRows)
-                        {
-                            dgv.Rows.Clear();
-                            while (reader.Read())
-                            {
-                                string kodeBrg = reader.GetString(0);
-                                string namaBrg = reader.GetString(1);
-                                decimal hargaBeli = reader.GetDecimal(2);
-                                int masukBox = reader.GetInt32(3);
-                                string distributor = reader.GetString(4);
-                                decimal totalHarga = reader.GetDecimal(5);
-                                string status = reader.GetString(6);
-                                decimal Tunai = reader.GetDecimal(7);
-                                string TunaiText = Tunai.ToString("N0", new CultureInfo("id-ID"));
-                                i++;
-                                Image editIcon = Properties.Resources.icons8_delete_24px_1;
+            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            string query = "SELECT no_faktur, tgl, kode, nama, qty, harga, laba FROM transaction WHERE DATE(tgl) = DATE(@tgl) AND payment = 'kredit'";
 
-                                dgv.Rows.Add(i, kodeBrg, namaBrg, hargaBeli, masukBox, distributor, TunaiText, totalHarga, status, editIcon);
+            DateTime tgl = STARTDATE.Value;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    // Mengatur parameter tanggal
+                    cmd.Parameters.Add("@tgl", MySqlDbType.DateTime).Value = tgl;
+
+                    Console.WriteLine(tgl);
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            // Mengecek apakah ada data yang bisa dibaca
+                            dgv.Rows.Clear();
+                            if (reader.HasRows)
+                            {
+                                // Bersihkan DataGridView jika sudah ada data sebelumnya
+
+                                // Loop melalui hasil pembacaan
+                                while (reader.Read())
+                                {
+                                    // Mengambil nilai dari hasil pembacaan
+                                    string noFaktur = reader["no_faktur"].ToString();
+                                    DateTime tanggal = Convert.ToDateTime(reader["tgl"]);
+                                    string kode = reader["kode"].ToString();
+                                    string nama = reader["nama"].ToString();
+                                    int qty = Convert.ToInt32(reader["qty"]);
+                                    decimal harga = Convert.ToDecimal(reader["harga"]);
+                                    string strharga = harga.ToString("C", new CultureInfo("ID-id"));
+                                    decimal laba = Convert.ToDecimal(reader["laba"]);
+                                    string strlaba = laba.ToString("C", new CultureInfo("ID-id"));
+
+                                    decimal subtotal = qty * harga;
+                                    string tanggalFormatted = tanggal.ToString("yyyy-MM-dd");
+
+                                    // Tambahkan data ke DataGridView
+                                    dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, qty, strharga, strlaba, laba, subtotal);
+                                }
+                                string text = "TOTAL :";
+                                decimal total = 0;
+                                decimal labas = 0;
+                                for (int i = 0; i < dgv.Rows.Count;)
+                                {
+                                    total += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
+                                    labas += decimal.Parse(dgv.Rows[i].Cells[7].Value.ToString());
+                                    i++;
+                                }
+                                string totalText = total.ToString("C", new CultureInfo("id-ID"));
+                                string labaText = labas.ToString("C", new CultureInfo("id-ID"));
+                                dgv.Rows.Add("", "", "", text, totalText, "LABA :", labaText);
+                            }
+                            else
+                            {
+                                Console.WriteLine("A");
                             }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Terjadi kesalahan ketika load data", ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+                    }
                 }
             }
-            connection.Close();
         }
-
         private void FormDebt_Load(object sender, EventArgs e)
         {
-            loadData();
+            STARTDATE.Value = DateTime.Now;
         }
 
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void STARTDATE_ValueChanged(object sender, EventArgs e)
         {
-            
-            if (e.ColumnIndex == dgv.Columns["Column9"].Index && e.RowIndex >= 0)
-            {
-                string nofaktur = dgv.Rows[e.RowIndex].Cells["column1"].ToString();
-                FormDebtDetails frmRetur = new FormDebtDetails();
-                frmRetur.NoFaktur = nofaktur.ToString();
-                //frmRetur.FormClosed += new FormClosedEventHandler(FormRetur_Closed);
-                frmRetur.ShowDialog();
-            }
+
+            GetDataByDate();
+            DateTime tgl = STARTDATE.Value;
         }
     }
 }

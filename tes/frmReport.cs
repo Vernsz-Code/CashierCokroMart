@@ -27,7 +27,7 @@ namespace tes
         private void GetDataByDate()
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT no_faktur, tgl, kode, nama, qty, harga, laba FROM transaction WHERE DATE(tgl) = DATE(@tgl)";
+            string query = "SELECT no_faktur, tgl, kode, nama, qty, harga, laba FROM transaction WHERE DATE(tgl) = DATE(@tgl) AND payment = 'tunai'";
 
             DateTime tgl = STARTDATE.Value;
 
@@ -70,18 +70,20 @@ namespace tes
                                     // Tambahkan data ke DataGridView
                                     dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, qty, strharga, strlaba, laba, subtotal);
                                 }
-                                string text = "TOTAL :";
                                 decimal total = 0;
                                 decimal labas = 0;
+                                int qtys = 0;
                                 for (int i = 0; i < dgv.Rows.Count;)
                                 {
                                     total += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
                                     labas += decimal.Parse(dgv.Rows[i].Cells[7].Value.ToString());
+                                    qtys += int.Parse(dgv.Rows[i].Cells[6].Value.ToString());
                                     i++;
                                 }
-                                string totalText = total.ToString("C", new CultureInfo("id-ID"));
-                                string labaText = labas.ToString("C", new CultureInfo("id-ID"));
-                                dgv.Rows.Add("", "", "",text, totalText, "LABA :", labaText);
+                                string totalText ="Total : " + total.ToString("C", new CultureInfo("id-ID"));
+                                string labaText ="Laba : " + labas.ToString("C", new CultureInfo("id-ID"));
+                                string qtyText ="Qty : " + qtys.ToString("C", new CultureInfo("id-ID"));
+                                dgv.Rows.Add("", "", "", "", qtyText, totalText, labaText);
                             }
                             else
                             {
@@ -121,11 +123,6 @@ namespace tes
 
             string strTgl = tgl.ToString("yyyy-MM-dd");
             lbl_tanggal.Text = strTgl;
-        }
-
-        private void SEARCH_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

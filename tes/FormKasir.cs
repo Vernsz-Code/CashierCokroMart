@@ -276,8 +276,19 @@ namespace tes
                     decimal markUp = Convert.ToDecimal(row.Cells["MarkUp"].Value);
                     decimal laba = Convert.ToDecimal(row.Cells["Laba"].Value);
 
-                    string insertQuery = "INSERT INTO transaction (no_faktur, kode, nama, qty, harga, subtotal, mark_up, laba) " +
-                                            "VALUES (@no_faktur, @kode_barang, @nama_barang, @qty, @harga_jual, @subtotal, @mark_up, @laba)";
+                    string payment;
+
+                    if (checkBox1.Checked)
+                    {
+                        payment = "kredit";
+                    }
+                    else
+                    {
+                        payment = "tunai";
+                    }
+
+                    string insertQuery = "INSERT INTO transaction (no_faktur, kode, nama, qty, harga, subtotal, mark_up, laba, payment) " +
+                                            "VALUES (@no_faktur, @kode_barang, @nama_barang, @qty, @harga_jual, @subtotal, @mark_up, @laba, @payment)";
 
                     MySqlCommand command = new MySqlCommand(insertQuery, connection);
                     command.Parameters.AddWithValue("@no_faktur", noFaktur);
@@ -288,6 +299,7 @@ namespace tes
                     command.Parameters.AddWithValue("@subtotal", subtotal);
                     command.Parameters.AddWithValue("@mark_up", markUp);
                     command.Parameters.AddWithValue("@laba", laba);
+                    command.Parameters.AddWithValue("@payment", payment);
 
                     command.ExecuteNonQuery();
                     Console.WriteLine("a");

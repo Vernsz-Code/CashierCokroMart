@@ -45,8 +45,6 @@ namespace tes
             this.label2 = new System.Windows.Forms.Label();
             this.groupDataPenjualan = new System.Windows.Forms.GroupBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.lbl_TGL = new System.Windows.Forms.Label();
-            this.lbl_tanggal = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +54,8 @@ namespace tes
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_TGL = new System.Windows.Forms.Label();
+            this.lbl_tanggal = new System.Windows.Forms.Label();
             this.groupDataPenjualan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +119,6 @@ namespace tes
             this.SEARCH.SelectedText = "";
             this.SEARCH.Size = new System.Drawing.Size(164, 30);
             this.SEARCH.TabIndex = 16;
-            this.SEARCH.TextChanged += new System.EventHandler(this.SEARCH_TextChanged);
             // 
             // lbl_TOTALKEUNTUNGAN
             // 
@@ -285,28 +284,6 @@ namespace tes
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // lbl_TGL
-            // 
-            this.lbl_TGL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_TGL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TGL.Location = new System.Drawing.Point(10, 567);
-            this.lbl_TGL.Name = "lbl_TGL";
-            this.lbl_TGL.Size = new System.Drawing.Size(177, 32);
-            this.lbl_TGL.TabIndex = 21;
-            this.lbl_TGL.Text = "Penjualan Tanggal";
-            this.lbl_TGL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl_tanggal
-            // 
-            this.lbl_tanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_tanggal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tanggal.Location = new System.Drawing.Point(10, 599);
-            this.lbl_tanggal.Name = "lbl_tanggal";
-            this.lbl_tanggal.Size = new System.Drawing.Size(177, 32);
-            this.lbl_tanggal.TabIndex = 29;
-            this.lbl_tanggal.Text = "2000-4-24";
-            this.lbl_tanggal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "No Faktur";
@@ -369,6 +346,28 @@ namespace tes
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
+            // 
+            // lbl_TGL
+            // 
+            this.lbl_TGL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_TGL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TGL.Location = new System.Drawing.Point(10, 567);
+            this.lbl_TGL.Name = "lbl_TGL";
+            this.lbl_TGL.Size = new System.Drawing.Size(177, 32);
+            this.lbl_TGL.TabIndex = 21;
+            this.lbl_TGL.Text = "Penjualan Tanggal";
+            this.lbl_TGL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_tanggal
+            // 
+            this.lbl_tanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_tanggal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tanggal.Location = new System.Drawing.Point(10, 599);
+            this.lbl_tanggal.Name = "lbl_tanggal";
+            this.lbl_tanggal.Size = new System.Drawing.Size(177, 32);
+            this.lbl_tanggal.TabIndex = 29;
+            this.lbl_tanggal.Text = "2000-4-24";
+            this.lbl_tanggal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmReport
             // 

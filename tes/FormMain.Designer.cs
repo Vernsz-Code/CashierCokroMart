@@ -68,10 +68,9 @@ namespace tes
             this.panel2.Controls.Add(this.guna2ImageButton2);
             this.panel2.Controls.Add(this.guna2ImageButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(267, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1557, 43);
+            this.panel2.Size = new System.Drawing.Size(840, 35);
             this.panel2.TabIndex = 3;
             // 
             // label21
@@ -80,20 +79,18 @@ namespace tes
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(1359, 11);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(691, 9);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 21);
+            this.label21.Size = new System.Drawing.Size(33, 16);
             this.label21.TabIndex = 8;
             this.label21.Text = "V 1.0";
             // 
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2VSeparator1.Location = new System.Drawing.Point(1449, 5);
-            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(759, 4);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(13, 31);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 25);
             this.guna2VSeparator1.TabIndex = 7;
             // 
             // label3
@@ -103,10 +100,9 @@ namespace tes
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 21);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Cashier";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -120,11 +116,10 @@ namespace tes
             this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton3.ImageRotate = 0F;
             this.guna2ImageButton3.ImageSize = new System.Drawing.Size(26, 26);
-            this.guna2ImageButton3.Location = new System.Drawing.Point(1403, 0);
-            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(724, 0);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton3.Size = new System.Drawing.Size(49, 42);
+            this.guna2ImageButton3.Size = new System.Drawing.Size(37, 34);
             this.guna2ImageButton3.TabIndex = 6;
             this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
             // 
@@ -135,10 +130,9 @@ namespace tes
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(87, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(65, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 21);
+            this.label2.Size = new System.Drawing.Size(30, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "App";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,11 +146,10 @@ namespace tes
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(1463, 0);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(769, 0);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(49, 42);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(37, 34);
             this.guna2ImageButton2.TabIndex = 6;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click_1);
             // 
@@ -165,15 +158,14 @@ namespace tes
             this.guna2ImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(26, 26);
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.Image = global::tes.Properties.Resources.icons8_cancel_24px;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(1504, 0);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(800, 0);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(49, 42);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(37, 34);
             this.guna2ImageButton1.TabIndex = 3;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click_1);
             // 
@@ -184,9 +176,8 @@ namespace tes
             this.Header.Controls.Add(this.pictureBox1);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
-            this.Header.Margin = new System.Windows.Forms.Padding(4);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(267, 123);
+            this.Header.Size = new System.Drawing.Size(200, 100);
             this.Header.TabIndex = 0;
             // 
             // label1
@@ -194,20 +185,18 @@ namespace tes
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(97, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(73, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 39);
+            this.label1.Size = new System.Drawing.Size(108, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cashier";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -225,9 +214,8 @@ namespace tes
             this.panel1.Controls.Add(this.Header);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 902);
+            this.panel1.Size = new System.Drawing.Size(200, 640);
             this.panel1.TabIndex = 0;
             // 
             // btnClientDebt
@@ -238,11 +226,10 @@ namespace tes
             this.btnClientDebt.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnClientDebt.ForeColor = System.Drawing.Color.Silver;
             this.btnClientDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClientDebt.Location = new System.Drawing.Point(0, 466);
-            this.btnClientDebt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientDebt.Location = new System.Drawing.Point(0, 380);
             this.btnClientDebt.Name = "btnClientDebt";
-            this.btnClientDebt.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnClientDebt.Size = new System.Drawing.Size(267, 49);
+            this.btnClientDebt.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClientDebt.Size = new System.Drawing.Size(200, 40);
             this.btnClientDebt.TabIndex = 45;
             this.btnClientDebt.Text = "Laporan Piutang";
             this.btnClientDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -259,11 +246,10 @@ namespace tes
             this.btnDebt.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnDebt.ForeColor = System.Drawing.Color.Silver;
             this.btnDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDebt.Location = new System.Drawing.Point(0, 417);
-            this.btnDebt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDebt.Location = new System.Drawing.Point(0, 340);
             this.btnDebt.Name = "btnDebt";
-            this.btnDebt.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDebt.Size = new System.Drawing.Size(267, 49);
+            this.btnDebt.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDebt.Size = new System.Drawing.Size(200, 40);
             this.btnDebt.TabIndex = 44;
             this.btnDebt.Text = "Laporan Hutang";
             this.btnDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -280,11 +266,10 @@ namespace tes
             this.btnlaporan.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnlaporan.ForeColor = System.Drawing.Color.Silver;
             this.btnlaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnlaporan.Location = new System.Drawing.Point(0, 368);
-            this.btnlaporan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlaporan.Location = new System.Drawing.Point(0, 300);
             this.btnlaporan.Name = "btnlaporan";
-            this.btnlaporan.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnlaporan.Size = new System.Drawing.Size(267, 49);
+            this.btnlaporan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnlaporan.Size = new System.Drawing.Size(200, 40);
             this.btnlaporan.TabIndex = 43;
             this.btnlaporan.Text = "Laporan Penjualan";
             this.btnlaporan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -302,11 +287,10 @@ namespace tes
             this.button2.ForeColor = System.Drawing.Color.Silver;
             this.button2.Image = global::tes.Properties.Resources.icons8_commercial_24px1;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 319);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(0, 260);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(267, 49);
+            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(200, 40);
             this.button2.TabIndex = 42;
             this.button2.Text = "  Laporan";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,11 +307,10 @@ namespace tes
             this.btnKas.ForeColor = System.Drawing.Color.Silver;
             this.btnKas.Image = global::tes.Properties.Resources.icons8_money_24px;
             this.btnKas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKas.Location = new System.Drawing.Point(0, 270);
-            this.btnKas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKas.Location = new System.Drawing.Point(0, 220);
             this.btnKas.Name = "btnKas";
-            this.btnKas.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnKas.Size = new System.Drawing.Size(267, 49);
+            this.btnKas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnKas.Size = new System.Drawing.Size(200, 40);
             this.btnKas.TabIndex = 38;
             this.btnKas.Text = "  Kas";
             this.btnKas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,11 +327,10 @@ namespace tes
             this.btnFaktur.ForeColor = System.Drawing.Color.Silver;
             this.btnFaktur.Image = global::tes.Properties.Resources.icons8_ingredients_24px;
             this.btnFaktur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFaktur.Location = new System.Drawing.Point(0, 221);
-            this.btnFaktur.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaktur.Location = new System.Drawing.Point(0, 180);
             this.btnFaktur.Name = "btnFaktur";
-            this.btnFaktur.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnFaktur.Size = new System.Drawing.Size(267, 49);
+            this.btnFaktur.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnFaktur.Size = new System.Drawing.Size(200, 40);
             this.btnFaktur.TabIndex = 16;
             this.btnFaktur.Text = "  Penjualan";
             this.btnFaktur.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -365,11 +347,10 @@ namespace tes
             this.btnMaster.ForeColor = System.Drawing.Color.Silver;
             this.btnMaster.Image = global::tes.Properties.Resources.icons8_shopping_cart_24px;
             this.btnMaster.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaster.Location = new System.Drawing.Point(0, 172);
-            this.btnMaster.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaster.Location = new System.Drawing.Point(0, 140);
             this.btnMaster.Name = "btnMaster";
-            this.btnMaster.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnMaster.Size = new System.Drawing.Size(267, 49);
+            this.btnMaster.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnMaster.Size = new System.Drawing.Size(200, 40);
             this.btnMaster.TabIndex = 2;
             this.btnMaster.Text = "  Stok";
             this.btnMaster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,11 +368,10 @@ namespace tes
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 123);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 100);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(267, 49);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(200, 40);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "  Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -402,23 +382,21 @@ namespace tes
             // mainPanel
             // 
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(267, 43);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPanel.Location = new System.Drawing.Point(200, 35);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1557, 859);
+            this.mainPanel.Size = new System.Drawing.Size(840, 605);
             this.mainPanel.TabIndex = 8;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1824, 902);
+            this.ClientSize = new System.Drawing.Size(1040, 640);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1396, 864);
+            this.MinimumSize = new System.Drawing.Size(1023, 590);
             this.Name = "FormMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
