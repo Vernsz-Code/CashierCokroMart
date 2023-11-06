@@ -45,10 +45,10 @@ namespace tes
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             // Mengecek apakah ada data yang bisa dibaca
+                            dgv.Rows.Clear();
                             if (reader.HasRows)
                             {
                                 // Bersihkan DataGridView jika sudah ada data sebelumnya
-                                dgv.Rows.Clear();
 
                                 // Loop melalui hasil pembacaan
                                 while (reader.Read())
@@ -60,11 +60,28 @@ namespace tes
                                     string nama = reader["nama"].ToString();
                                     int qty = Convert.ToInt32(reader["qty"]);
                                     decimal harga = Convert.ToDecimal(reader["harga"]);
+                                    string strharga = harga.ToString("C", new CultureInfo("ID-id"));
                                     decimal laba = Convert.ToDecimal(reader["laba"]);
+                                    string strlaba = laba.ToString("C", new CultureInfo("ID-id"));
+
+                                    decimal subtotal = qty * harga;
+                                    string tanggalFormatted = tanggal.ToString("yyyy-MM-dd");
 
                                     // Tambahkan data ke DataGridView
-                                    dgv.Rows.Add(noFaktur, tanggal, kode, nama, qty, harga, laba);
+                                    dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, qty, strharga, strlaba, laba, subtotal);
                                 }
+                                string text = "TOTAL :";
+                                decimal total = 0;
+                                decimal labas = 0;
+                                for (int i = 0; i < dgv.Rows.Count;)
+                                {
+                                    total += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
+                                    labas += decimal.Parse(dgv.Rows[i].Cells[7].Value.ToString());
+                                    i++;
+                                }
+                                string totalText = total.ToString("C", new CultureInfo("id-ID"));
+                                string labaText = labas.ToString("C", new CultureInfo("id-ID"));
+                                dgv.Rows.Add("", "", "",text, totalText, "LABA :", labaText);
                             }
                             else
                             {
@@ -100,6 +117,10 @@ namespace tes
         private void STARTDATE_ValueChanged(object sender, EventArgs e)
         {
             GetDataByDate();
+            DateTime tgl = STARTDATE.Value;
+
+            string strTgl = tgl.ToString("yyyy-MM-dd");
+            lbl_tanggal.Text = strTgl;
         }
 
         private void SEARCH_TextChanged(object sender, EventArgs e)
