@@ -244,7 +244,7 @@ namespace tes
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-            //createTable();
+            createTable();
             DatePicker.Value = DateTime.Now;
         }
     }

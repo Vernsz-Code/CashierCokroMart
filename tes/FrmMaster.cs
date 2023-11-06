@@ -92,7 +92,7 @@ namespace tes
                 laba,
                 harta,
                 persentase
-                from barang;";
+                from product;";
             connection.Open();
             using (MySqlCommand cmd = new MySqlCommand(query, connection))
             {
@@ -158,7 +158,7 @@ namespace tes
                 laba,
                 harta,
                 persentase
-                from barang;";
+                from product;";
             connection.Open();
             using (MySqlCommand cmd = new MySqlCommand(query, connection))
             {
