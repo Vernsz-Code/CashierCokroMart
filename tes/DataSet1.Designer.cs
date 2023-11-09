@@ -279,15 +279,23 @@ namespace tes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataSourceProdukDataTable : global::System.Data.TypedTableBase<DataSourceProdukRow> {
             
-            private global::System.Data.DataColumn columnKodeBarang;
+            private global::System.Data.DataColumn columnnamaPelanggan;
             
-            private global::System.Data.DataColumn columnNamaBarang;
+            private global::System.Data.DataColumn columnno_faktur;
             
-            private global::System.Data.DataColumn columnQTY;
+            private global::System.Data.DataColumn columntgl;
             
-            private global::System.Data.DataColumn columnHarga;
+            private global::System.Data.DataColumn columnnama;
             
-            private global::System.Data.DataColumn columnTotal;
+            private global::System.Data.DataColumn columnkode;
+            
+            private global::System.Data.DataColumn columnharga;
+            
+            private global::System.Data.DataColumn columnqty;
+            
+            private global::System.Data.DataColumn columnsubtotal;
+            
+            private global::System.Data.DataColumn columnTunai;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -324,41 +332,73 @@ namespace tes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn KodeBarangColumn {
+            public global::System.Data.DataColumn namaPelangganColumn {
                 get {
-                    return this.columnKodeBarang;
+                    return this.columnnamaPelanggan;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NamaBarangColumn {
+            public global::System.Data.DataColumn no_fakturColumn {
                 get {
-                    return this.columnNamaBarang;
+                    return this.columnno_faktur;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn QTYColumn {
+            public global::System.Data.DataColumn tglColumn {
                 get {
-                    return this.columnQTY;
+                    return this.columntgl;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn HargaColumn {
+            public global::System.Data.DataColumn namaColumn {
                 get {
-                    return this.columnHarga;
+                    return this.columnnama;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
+            public global::System.Data.DataColumn kodeColumn {
                 get {
-                    return this.columnTotal;
+                    return this.columnkode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn hargaColumn {
+                get {
+                    return this.columnharga;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn qtyColumn {
+                get {
+                    return this.columnqty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn subtotalColumn {
+                get {
+                    return this.columnsubtotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TunaiColumn {
+                get {
+                    return this.columnTunai;
                 }
             }
             
@@ -399,14 +439,18 @@ namespace tes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataSourceProdukRow AddDataSourceProdukRow(string KodeBarang, string NamaBarang, string QTY, string Harga, string Total) {
+            public DataSourceProdukRow AddDataSourceProdukRow(string namaPelanggan, string no_faktur, string tgl, string nama, string kode, decimal harga, decimal qty, decimal subtotal, decimal Tunai) {
                 DataSourceProdukRow rowDataSourceProdukRow = ((DataSourceProdukRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        KodeBarang,
-                        NamaBarang,
-                        QTY,
-                        Harga,
-                        Total};
+                        namaPelanggan,
+                        no_faktur,
+                        tgl,
+                        nama,
+                        kode,
+                        harga,
+                        qty,
+                        subtotal,
+                        Tunai};
                 rowDataSourceProdukRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataSourceProdukRow);
                 return rowDataSourceProdukRow;
@@ -429,26 +473,38 @@ namespace tes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnKodeBarang = base.Columns["KodeBarang"];
-                this.columnNamaBarang = base.Columns["NamaBarang"];
-                this.columnQTY = base.Columns["QTY"];
-                this.columnHarga = base.Columns["Harga"];
-                this.columnTotal = base.Columns["Total"];
+                this.columnnamaPelanggan = base.Columns["namaPelanggan"];
+                this.columnno_faktur = base.Columns["no_faktur"];
+                this.columntgl = base.Columns["tgl"];
+                this.columnnama = base.Columns["nama"];
+                this.columnkode = base.Columns["kode"];
+                this.columnharga = base.Columns["harga"];
+                this.columnqty = base.Columns["qty"];
+                this.columnsubtotal = base.Columns["subtotal"];
+                this.columnTunai = base.Columns["Tunai"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnKodeBarang = new global::System.Data.DataColumn("KodeBarang", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKodeBarang);
-                this.columnNamaBarang = new global::System.Data.DataColumn("NamaBarang", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNamaBarang);
-                this.columnQTY = new global::System.Data.DataColumn("QTY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQTY);
-                this.columnHarga = new global::System.Data.DataColumn("Harga", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHarga);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
+                this.columnnamaPelanggan = new global::System.Data.DataColumn("namaPelanggan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnamaPelanggan);
+                this.columnno_faktur = new global::System.Data.DataColumn("no_faktur", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnno_faktur);
+                this.columntgl = new global::System.Data.DataColumn("tgl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntgl);
+                this.columnnama = new global::System.Data.DataColumn("nama", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnama);
+                this.columnkode = new global::System.Data.DataColumn("kode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkode);
+                this.columnharga = new global::System.Data.DataColumn("harga", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnharga);
+                this.columnqty = new global::System.Data.DataColumn("qty", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnqty);
+                this.columnsubtotal = new global::System.Data.DataColumn("subtotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubtotal);
+                this.columnTunai = new global::System.Data.DataColumn("Tunai", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTunai);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -591,142 +647,254 @@ namespace tes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string KodeBarang {
+            public string namaPelanggan {
                 get {
                     try {
-                        return ((string)(this[this.tableDataSourceProduk.KodeBarangColumn]));
+                        return ((string)(this[this.tableDataSourceProduk.namaPelangganColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KodeBarang\' in table \'DataSourceProduk\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'namaPelanggan\' in table \'DataSourceProduk\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataSourceProduk.KodeBarangColumn] = value;
+                    this[this.tableDataSourceProduk.namaPelangganColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NamaBarang {
+            public string no_faktur {
                 get {
                     try {
-                        return ((string)(this[this.tableDataSourceProduk.NamaBarangColumn]));
+                        return ((string)(this[this.tableDataSourceProduk.no_fakturColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NamaBarang\' in table \'DataSourceProduk\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'no_faktur\' in table \'DataSourceProduk\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataSourceProduk.NamaBarangColumn] = value;
+                    this[this.tableDataSourceProduk.no_fakturColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string QTY {
+            public string tgl {
                 get {
                     try {
-                        return ((string)(this[this.tableDataSourceProduk.QTYColumn]));
+                        return ((string)(this[this.tableDataSourceProduk.tglColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'QTY\' in table \'DataSourceProduk\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tgl\' in table \'DataSourceProduk\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataSourceProduk.QTYColumn] = value;
+                    this[this.tableDataSourceProduk.tglColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Harga {
+            public string nama {
                 get {
                     try {
-                        return ((string)(this[this.tableDataSourceProduk.HargaColumn]));
+                        return ((string)(this[this.tableDataSourceProduk.namaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Harga\' in table \'DataSourceProduk\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'nama\' in table \'DataSourceProduk\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataSourceProduk.HargaColumn] = value;
+                    this[this.tableDataSourceProduk.namaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Total {
+            public string kode {
                 get {
                     try {
-                        return ((string)(this[this.tableDataSourceProduk.TotalColumn]));
+                        return ((string)(this[this.tableDataSourceProduk.kodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'DataSourceProduk\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'kode\' in table \'DataSourceProduk\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataSourceProduk.TotalColumn] = value;
+                    this[this.tableDataSourceProduk.kodeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsKodeBarangNull() {
-                return this.IsNull(this.tableDataSourceProduk.KodeBarangColumn);
+            public decimal harga {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataSourceProduk.hargaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'harga\' in table \'DataSourceProduk\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataSourceProduk.hargaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetKodeBarangNull() {
-                this[this.tableDataSourceProduk.KodeBarangColumn] = global::System.Convert.DBNull;
+            public decimal qty {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataSourceProduk.qtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'qty\' in table \'DataSourceProduk\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataSourceProduk.qtyColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNamaBarangNull() {
-                return this.IsNull(this.tableDataSourceProduk.NamaBarangColumn);
+            public decimal subtotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataSourceProduk.subtotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'subtotal\' in table \'DataSourceProduk\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataSourceProduk.subtotalColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNamaBarangNull() {
-                this[this.tableDataSourceProduk.NamaBarangColumn] = global::System.Convert.DBNull;
+            public decimal Tunai {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataSourceProduk.TunaiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tunai\' in table \'DataSourceProduk\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataSourceProduk.TunaiColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsQTYNull() {
-                return this.IsNull(this.tableDataSourceProduk.QTYColumn);
+            public bool IsnamaPelangganNull() {
+                return this.IsNull(this.tableDataSourceProduk.namaPelangganColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetQTYNull() {
-                this[this.tableDataSourceProduk.QTYColumn] = global::System.Convert.DBNull;
+            public void SetnamaPelangganNull() {
+                this[this.tableDataSourceProduk.namaPelangganColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsHargaNull() {
-                return this.IsNull(this.tableDataSourceProduk.HargaColumn);
+            public bool Isno_fakturNull() {
+                return this.IsNull(this.tableDataSourceProduk.no_fakturColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetHargaNull() {
-                this[this.tableDataSourceProduk.HargaColumn] = global::System.Convert.DBNull;
+            public void Setno_fakturNull() {
+                this[this.tableDataSourceProduk.no_fakturColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTotalNull() {
-                return this.IsNull(this.tableDataSourceProduk.TotalColumn);
+            public bool IstglNull() {
+                return this.IsNull(this.tableDataSourceProduk.tglColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTotalNull() {
-                this[this.tableDataSourceProduk.TotalColumn] = global::System.Convert.DBNull;
+            public void SettglNull() {
+                this[this.tableDataSourceProduk.tglColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnamaNull() {
+                return this.IsNull(this.tableDataSourceProduk.namaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnamaNull() {
+                this[this.tableDataSourceProduk.namaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IskodeNull() {
+                return this.IsNull(this.tableDataSourceProduk.kodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetkodeNull() {
+                this[this.tableDataSourceProduk.kodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IshargaNull() {
+                return this.IsNull(this.tableDataSourceProduk.hargaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SethargaNull() {
+                this[this.tableDataSourceProduk.hargaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsqtyNull() {
+                return this.IsNull(this.tableDataSourceProduk.qtyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetqtyNull() {
+                this[this.tableDataSourceProduk.qtyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssubtotalNull() {
+                return this.IsNull(this.tableDataSourceProduk.subtotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsubtotalNull() {
+                this[this.tableDataSourceProduk.subtotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTunaiNull() {
+                return this.IsNull(this.tableDataSourceProduk.TunaiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTunaiNull() {
+                this[this.tableDataSourceProduk.TunaiColumn] = global::System.Convert.DBNull;
             }
         }
         

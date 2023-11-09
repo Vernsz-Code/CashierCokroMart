@@ -374,7 +374,7 @@ namespace tes
                     cmd.Parameters.AddWithValue("@stok_awal", stok_awal);
                     cmd.Parameters.AddWithValue("@masuk", 0);
                     cmd.Parameters.AddWithValue("@keluar", 0);
-                    cmd.Parameters.AddWithValue("@stok_akhir", 0);
+                    cmd.Parameters.AddWithValue("@stok_akhir", stok_awal);
                     cmd.Parameters.AddWithValue("@suplier", sup);
                     cmd.Parameters.AddWithValue("@beli", beli);
                     cmd.Parameters.AddWithValue("@jual", jual);
@@ -413,6 +413,18 @@ namespace tes
                    "masuk = @masuk, keluar = @keluar, stok_akhir = @stok_akhir, " +
                    "pendapatan = @pendapatan, laba = @laba, harta = @harta WHERE kode_brg = @kode_brg";
 
+                    decimal laba = 0;
+
+                    string strLaba = LABA.Text;
+
+                    if(strLaba == "")
+                    {
+                        laba = 0;
+                    }
+                    else
+                    {
+                        laba = decimal.Parse(strLaba);
+                    }
 
                     using (MySqlCommand cmd = new MySqlCommand(kueri, connection))
                     {
@@ -427,7 +439,7 @@ namespace tes
                         cmd.Parameters.AddWithValue("@keluar", Convert.ToInt32(B_KELUAR.Value));
                         cmd.Parameters.AddWithValue("@stok_akhir", Convert.ToInt32(S_AKHIR.Value));
                         cmd.Parameters.AddWithValue("@pendapatan", decimal.Parse(PENDAPATAN.Text));
-                        cmd.Parameters.AddWithValue("@laba", decimal.Parse(LABA.Text));
+                        cmd.Parameters.AddWithValue("@laba", decimal.Parse(laba.ToString()));
                         cmd.Parameters.AddWithValue("@harta", decimal.Parse(Harta.Text));
                         cmd.Parameters.AddWithValue("@persentase", PERCENTASE.Text);
 
@@ -452,7 +464,7 @@ namespace tes
             groupBox2.Visible = true;
             Harta.Enabled = true;
             PENDAPATAN.Enabled = true;
-            S_AKHIR.Enabled = true;
+            S_AKHIR.Enabled = false;
             B_KELUAR.Enabled = true;
             B_MASUK.Enabled = true;
             SaveSection = SaveSectionEnum.Update;
@@ -475,8 +487,9 @@ namespace tes
                     string hargaJual = row.Cells["Column8"].Value.ToString().Replace(".", "");
                     MARKUP.Text = row.Cells["Column9"].Value.ToString();
                     string Pendapatan = row.Cells["Column10"].Value.ToString().Replace(".", "");
+                    LABA.Text = row.Cells["Column11"].Value.ToString().Replace(".", "");
                     Harta.Text = row.Cells["Column12"].Value.ToString().Replace(".", "");
-                    PERCENTASE.Text = row.Cells["Column13"].Value.ToString() + "%";
+                    PERCENTASE.Text = row.Cells["Column13"].Value.ToString().Replace("%", "");
                     DISTRIBUTOR.Text = row.Cells["Suplier"].Value.ToString();
                     HARGAJUAL1.Text = hargaJual;
                     PENDAPATAN.Text = Pendapatan;
@@ -576,7 +589,7 @@ namespace tes
 
                 // Sekarang, labaDibulatkan akan berisi nilai laba dengan 2 angka di belakang koma.
 
-                PERCENTASE.Text = labaDibulatkan + "%";
+                PERCENTASE.Text = labaDibulatkan;
         }
     }
 }

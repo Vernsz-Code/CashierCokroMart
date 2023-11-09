@@ -27,12 +27,13 @@ namespace tes
         private void GetDataByDate()
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT no_faktur, tgl, kode, nama, qty, harga, laba FROM transaction WHERE DATE(tgl) = DATE(@tgl) AND payment = 'kredit'";
+            string query = "SELECT no_faktur, MAX(tgl) as tgl, MAX(namaPelanggan) as nama, SUM(qty) as total_barang, SUM(subtotal) as total_harga FROM transaction WHERE DATE(tgl) = DATE(@tgl) AND payment = 'kredit' GROUP BY no_faktur; ";
 
             DateTime tgl = STARTDATE.Value;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
+
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     // Mengatur parameter tanggal
@@ -56,34 +57,33 @@ namespace tes
                                     // Mengambil nilai dari hasil pembacaan
                                     string noFaktur = reader["no_faktur"].ToString();
                                     DateTime tanggal = Convert.ToDateTime(reader["tgl"]);
-                                    string kode = reader["kode"].ToString();
                                     string nama = reader["nama"].ToString();
-                                    int qty = Convert.ToInt32(reader["qty"]);
-                                    decimal harga = Convert.ToDecimal(reader["harga"]);
-                                    string strharga = harga.ToString("C", new CultureInfo("ID-id"));
-                                    decimal laba = Convert.ToDecimal(reader["laba"]);
-                                    string strlaba = laba.ToString("C", new CultureInfo("ID-id"));
-
-                                    decimal subtotal = qty * harga;
+                                    int qty = Convert.ToInt32(reader["total_barang"]);
+                                    decimal harga = Convert.ToDecimal(reader["total_harga"]);
+                                    string strharga = harga.ToString("N0", new CultureInfo("ID-id"));
                                     string tanggalFormatted = tanggal.ToString("yyyy-MM-dd");
 
+                                    Image editIcon = Properties.Resources.icons8_info_24px_1;
                                     // Tambahkan data ke DataGridView
-                                    dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, qty, strharga, strlaba, laba, subtotal);
+                                    dgv.Rows.Add(noFaktur, tanggalFormatted, nama, qty, strharga, editIcon);
+
                                 }
-                                string text = "TOTAL :";
+
                                 decimal total = 0;
-                                decimal labas = 0;
                                 int qtys = 0;
-                                for (int i = 0; i < dgv.Rows.Count;)
+
+                                Image editIcoan = Properties.Resources.icons8_info_24px_1;
+                                for (int i = 0; i < dgv.Rows.Count;) 
                                 {
-                                    total += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
-                                    labas += decimal.Parse(dgv.Rows[i].Cells[7].Value.ToString());
-                                    qtys += int.Parse(dgv.Rows[i].Cells[4].Value.ToString());
+                                    total += decimal.Parse(dgv.Rows[i].Cells[4].Value.ToString());
+                                    qtys += int.Parse(dgv.Rows[i].Cells[3].Value.ToString());
                                     i++;
                                 }
-                                string totalText = total.ToString("C", new CultureInfo("id-ID"));
-                                string labaText = labas.ToString("C", new CultureInfo("id-ID"));
-                                dgv.Rows.Add("", "", "", "", "QTY: " + qtys, "TOTAL: " + totalText, "LABA: " + labaText);
+
+                                string totalText = total.ToString();
+
+                                // Tambahkan baris TOTAL ke DataGridView
+                                dgv.Rows.Add("", "", "TOTAL :", qtys, totalText, editIcoan);
                             }
                             else
                             {
@@ -107,6 +107,27 @@ namespace tes
         {
             GetDataByDate();
             DateTime tgl = STARTDATE.Value;
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgv.Columns["column4"].Index && e.RowIndex >= 0)
+            {
+                string nofaktur = dgv.Rows[e.RowIndex].Cells["column1"].Value.ToString();
+
+                if(nofaktur != "")
+                {
+                    string rawTgl = dgv.Rows[e.RowIndex].Cells["column2"].Value.ToString();
+                    DateTime tgl = DateTime.Parse(rawTgl);
+                    // Mengambil nilai tanggal dari sel dan memformatnya
+                    string formattedTgl = tgl.ToString("yyyy-MM-dd");
+                    FormCetakFaktur frmCetak = new FormCetakFaktur();
+                    frmCetak.no_faktur = nofaktur;
+                    frmCetak.tgl = formattedTgl;
+                    frmCetak.ShowDialog();
+                }
+
+            }
         }
     }
 }

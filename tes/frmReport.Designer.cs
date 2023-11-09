@@ -43,20 +43,19 @@ namespace tes
             this.label2 = new System.Windows.Forms.Label();
             this.groupDataPenjualan = new System.Windows.Forms.GroupBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.lbl_TGL = new System.Windows.Forms.Label();
-            this.lbl_tanggal = new System.Windows.Forms.Label();
-            this.btnExport = new Guna.UI2.WinForms.Guna2Button();
-            this.PRINTALL = new Guna.UI2.WinForms.Guna2Button();
-            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExport = new Guna.UI2.WinForms.Guna2Button();
+            this.PRINTALL = new Guna.UI2.WinForms.Guna2Button();
+            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupDataPenjualan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -156,7 +155,7 @@ namespace tes
             this.groupDataPenjualan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupDataPenjualan.Location = new System.Drawing.Point(12, 62);
             this.groupDataPenjualan.Name = "groupDataPenjualan";
-            this.groupDataPenjualan.Size = new System.Drawing.Size(971, 483);
+            this.groupDataPenjualan.Size = new System.Drawing.Size(971, 572);
             this.groupDataPenjualan.TabIndex = 28;
             this.groupDataPenjualan.TabStop = false;
             this.groupDataPenjualan.Text = "Data Penjualan";
@@ -188,8 +187,9 @@ namespace tes
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
             this.Column6,
+            this.Column5,
+            this.Column9,
             this.Column7,
             this.Column8,
             this.Column10});
@@ -218,7 +218,7 @@ namespace tes
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 30;
-            this.dgv.Size = new System.Drawing.Size(965, 461);
+            this.dgv.Size = new System.Drawing.Size(965, 550);
             this.dgv.TabIndex = 3;
             this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,29 +241,77 @@ namespace tes
             this.dgv.ThemeStyle.RowsStyle.Height = 30;
             this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // lbl_TGL
+            // Column1
             // 
-            this.lbl_TGL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_TGL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TGL.Location = new System.Drawing.Point(10, 567);
-            this.lbl_TGL.Name = "lbl_TGL";
-            this.lbl_TGL.Size = new System.Drawing.Size(177, 32);
-            this.lbl_TGL.TabIndex = 21;
-            this.lbl_TGL.Text = "Penjualan Tanggal";
-            this.lbl_TGL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Column1.HeaderText = "No Faktur";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // lbl_tanggal
+            // Column2
             // 
-            this.lbl_tanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_tanggal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tanggal.Location = new System.Drawing.Point(10, 599);
-            this.lbl_tanggal.Name = "lbl_tanggal";
-            this.lbl_tanggal.Size = new System.Drawing.Size(177, 32);
-            this.lbl_tanggal.TabIndex = 29;
-            this.lbl_tanggal.Text = "2000-4-24";
-            this.lbl_tanggal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Column2.HeaderText = "Tanggal";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Kode Barang";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Nama Barang";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Harga";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Qty";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Subtotal";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Laba";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "LabaSum";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "subtotal";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
             // 
             // btnExport
             // 
@@ -327,76 +375,12 @@ namespace tes
             this.SEARCH.Size = new System.Drawing.Size(164, 30);
             this.SEARCH.TabIndex = 16;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No Faktur";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tanggal";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Kode Barang";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Nama Barang";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Qty";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Harga";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Laba";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "LabaSum";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "subtotal";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 640);
             this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.lbl_tanggal);
             this.Controls.Add(this.groupDataPenjualan);
             this.Controls.Add(this.lbl_TOTALKEUNTUNGAN);
             this.Controls.Add(this.label5);
@@ -404,7 +388,6 @@ namespace tes
             this.Controls.Add(this.lbl_TOTALPENJUALAN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbl_TGL);
             this.Controls.Add(this.PRINTALL);
             this.Controls.Add(this.STARTDATE);
             this.Controls.Add(this.SEARCH);
@@ -430,15 +413,14 @@ namespace tes
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupDataPenjualan;
         private Guna.UI2.WinForms.Guna2DataGridView dgv;
-        private System.Windows.Forms.Label lbl_TGL;
-        private System.Windows.Forms.Label lbl_tanggal;
         private Guna.UI2.WinForms.Guna2Button btnExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;

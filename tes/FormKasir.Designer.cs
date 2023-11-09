@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKasir));
             this.lbl_NOFAKTUR = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -66,6 +67,8 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnBayar = new Guna.UI2.WinForms.Guna2Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.namaTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -438,7 +441,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.SteelBlue;
             this.guna2Button1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::tes.Properties.Resources.icons8_print_24px;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.Location = new System.Drawing.Point(896, 17);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
@@ -504,7 +507,7 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
             this.btnSave.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::tes.Properties.Resources.icons8_checked_24px1;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(795, 17);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
@@ -524,7 +527,7 @@
             this.btnBayar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
             this.btnBayar.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBayar.ForeColor = System.Drawing.Color.White;
-            this.btnBayar.Image = global::tes.Properties.Resources.icons8_ok_48px;
+            this.btnBayar.Image = ((System.Drawing.Image)(resources.GetObject("btnBayar.Image")));
             this.btnBayar.Location = new System.Drawing.Point(873, 171);
             this.btnBayar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBayar.Name = "btnBayar";
@@ -542,12 +545,51 @@
             this.checkBox1.TabIndex = 25;
             this.checkBox1.Text = "Kredit";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // namaTextBox
+            // 
+            this.namaTextBox.BorderColor = System.Drawing.Color.Black;
+            this.namaTextBox.BorderRadius = 15;
+            this.namaTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.namaTextBox.DefaultText = "";
+            this.namaTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.namaTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.namaTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.namaTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.namaTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.namaTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.namaTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.namaTextBox.Location = new System.Drawing.Point(191, 171);
+            this.namaTextBox.Name = "namaTextBox";
+            this.namaTextBox.PasswordChar = '\0';
+            this.namaTextBox.PlaceholderText = "";
+            this.namaTextBox.SelectedText = "";
+            this.namaTextBox.Size = new System.Drawing.Size(149, 31);
+            this.namaTextBox.TabIndex = 26;
+            this.namaTextBox.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(149, 180);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 14);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Nama";
+            this.label5.Visible = false;
             // 
             // FormKasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 640);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.namaTextBox);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.guna2Separator1);
@@ -610,5 +652,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Laba;
         private System.Windows.Forms.DataGridViewImageColumn btnDelete;
         private System.Windows.Forms.CheckBox checkBox1;
+        private Guna.UI2.WinForms.Guna2TextBox namaTextBox;
+        private System.Windows.Forms.Label label5;
     }
 }

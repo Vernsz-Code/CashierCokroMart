@@ -132,31 +132,34 @@ namespace tes
                                     string nama = reader["nama"].ToString();
                                     int qty = Convert.ToInt32(reader["qty"]);
                                     decimal harga = Convert.ToDecimal(reader["harga"]);
-                                    string strharga = harga.ToString("C", new CultureInfo("ID-id"));
+                                    string strharga = harga.ToString("N0", new CultureInfo("ID-id"));
                                     decimal laba = Convert.ToDecimal(reader["laba"]);
-                                    string strlaba = laba.ToString("C", new CultureInfo("ID-id"));
+                                    string strlaba = laba.ToString("N0", new CultureInfo("ID-id"));
 
                                     decimal subtotal = qty * harga;
+
+                                    string strsubtotal = subtotal.ToString("N0", new CultureInfo("ID-id"));
                                     string tanggalFormatted = tanggal.ToString("yyyy-MM-dd");
 
                                     // Tambahkan data ke DataGridView
-                                    dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, qty, strharga, strlaba, laba, subtotal);
+                                    dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, strharga, qty, strsubtotal, strlaba, laba, subtotal);
 
                                 }
                                 
                                 decimal total = 0;
                                 decimal labas = 0;
                                 int qtys = 0;
+                                
                                 for (int i = 0; i < dgv.Rows.Count;)
                                 {
-                                    total += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
-                                    labas += decimal.Parse(dgv.Rows[i].Cells[7].Value.ToString());
-                                    qtys += int.Parse(dgv.Rows[i].Cells[4].Value.ToString());
+                                    total += decimal.Parse(dgv.Rows[i].Cells[9].Value.ToString());
+                                    labas += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
+                                    qtys += int.Parse(dgv.Rows[i].Cells[5].Value.ToString());
                                     i++;
                                 }
-                                string totalText = total.ToString("C", new CultureInfo("id-ID"));
-                                string labaText = labas.ToString("C", new CultureInfo("id-ID"));
-                                dgv.Rows.Add("", "", "", "", "QTY: " + qtys, "TOTAL: " + totalText, "LABA: " + labaText);
+                                string totalText = total.ToString("N0", new CultureInfo("id-ID"));
+                                string labaText = labas.ToString("N0", new CultureInfo("id-ID"));
+                                dgv.Rows.Add("", "", "", "TOTAL :", "", qtys, totalText, labaText);
                             }
                             else
                             {
@@ -187,10 +190,6 @@ namespace tes
         {
             GetDataByDate();
             DateTime tgl = STARTDATE.Value;
-
-
-            string strTgl = tgl.ToString("yyyy-MM-dd");
-            lbl_tanggal.Text = strTgl;
         }
 
         
@@ -223,6 +222,11 @@ namespace tes
             public int QTY { get; set; }
             public decimal harga { get; set; }
             public decimal laba { get; set; }
+        }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

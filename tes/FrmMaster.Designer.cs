@@ -56,6 +56,8 @@ namespace tes
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LABA = new Guna.UI2.WinForms.Guna2TextBox();
             this.B_KELUAR = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.B_MASUK = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -88,8 +90,6 @@ namespace tes
             this.label11 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LABA = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -424,6 +424,37 @@ namespace tes
             this.groupBox2.Text = "Input Data";
             this.groupBox2.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(677, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 14);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Laba";
+            // 
+            // LABA
+            // 
+            this.LABA.BorderRadius = 12;
+            this.LABA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LABA.DefaultText = "0";
+            this.LABA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.LABA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.LABA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LABA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LABA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LABA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LABA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LABA.Location = new System.Drawing.Point(749, 105);
+            this.LABA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LABA.Name = "LABA";
+            this.LABA.PasswordChar = '\0';
+            this.LABA.PlaceholderText = "";
+            this.LABA.SelectedText = "";
+            this.LABA.Size = new System.Drawing.Size(152, 29);
+            this.LABA.TabIndex = 31;
+            // 
             // B_KELUAR
             // 
             this.B_KELUAR.BackColor = System.Drawing.Color.Transparent;
@@ -432,6 +463,11 @@ namespace tes
             this.B_KELUAR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.B_KELUAR.Location = new System.Drawing.Point(935, 62);
             this.B_KELUAR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.B_KELUAR.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.B_KELUAR.Name = "B_KELUAR";
             this.B_KELUAR.Size = new System.Drawing.Size(75, 29);
             this.B_KELUAR.TabIndex = 29;
@@ -454,6 +490,11 @@ namespace tes
             this.B_MASUK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.B_MASUK.Location = new System.Drawing.Point(935, 19);
             this.B_MASUK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.B_MASUK.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.B_MASUK.Name = "B_MASUK";
             this.B_MASUK.Size = new System.Drawing.Size(75, 29);
             this.B_MASUK.TabIndex = 27;
@@ -473,9 +514,15 @@ namespace tes
             this.S_AKHIR.BackColor = System.Drawing.Color.Transparent;
             this.S_AKHIR.BorderRadius = 12;
             this.S_AKHIR.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.S_AKHIR.Enabled = false;
             this.S_AKHIR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.S_AKHIR.Location = new System.Drawing.Point(749, 62);
             this.S_AKHIR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.S_AKHIR.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.S_AKHIR.Name = "S_AKHIR";
             this.S_AKHIR.Size = new System.Drawing.Size(75, 29);
             this.S_AKHIR.TabIndex = 25;
@@ -727,6 +774,11 @@ namespace tes
             this.S_AWAL.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.S_AWAL.Location = new System.Drawing.Point(749, 19);
             this.S_AWAL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.S_AWAL.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.S_AWAL.Name = "S_AWAL";
             this.S_AWAL.Size = new System.Drawing.Size(75, 29);
             this.S_AWAL.TabIndex = 3;
@@ -900,37 +952,6 @@ namespace tes
             this.SEARCH.Size = new System.Drawing.Size(164, 30);
             this.SEARCH.TabIndex = 15;
             this.SEARCH.TextChanged += new System.EventHandler(this.SEARCH_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(677, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 14);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Laba";
-            // 
-            // LABA
-            // 
-            this.LABA.BorderRadius = 12;
-            this.LABA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LABA.DefaultText = "";
-            this.LABA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.LABA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.LABA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.LABA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.LABA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LABA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LABA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LABA.Location = new System.Drawing.Point(749, 105);
-            this.LABA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LABA.Name = "LABA";
-            this.LABA.PasswordChar = '\0';
-            this.LABA.PlaceholderText = "";
-            this.LABA.SelectedText = "";
-            this.LABA.Size = new System.Drawing.Size(152, 29);
-            this.LABA.TabIndex = 31;
             // 
             // FrmStok
             // 

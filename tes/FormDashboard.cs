@@ -59,7 +59,51 @@ namespace tes
 
         private void DatePicker_ValueChanged(object sender, EventArgs e)
         {
+            Penjualan();
         }
 
+        private void Penjualan()
+        {
+
+            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string query = "SELECT SUM(subtotal) as Penjualan from transaction WHERE DATE(tgl) = @tgl";
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            {
+                string tgl = DatePicker.Value.ToString("yyyy-MM-dd");
+                connection.Open();
+                cmd.Parameters.AddWithValue("@tgl", tgl);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        decimal p = 0;
+                        if (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                p = reader.GetDecimal(0);
+                                lbl_PENJUALAN.Text = p.ToString("C", new CultureInfo("ID-id"));
+                            }
+                            else
+                            {
+                                lbl_PENJUALAN.Text = "Rp0,00";
+                            }
+                        }
+                        
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+        }
+
+        private void FormDashboard_Load(object sender, EventArgs e)
+        {
+            DatePicker.Value = DateTime.Now;
+        }
     }
 }
