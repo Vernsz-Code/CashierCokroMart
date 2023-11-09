@@ -26,7 +26,11 @@ namespace tes
         void LoadNoFaktur()
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT MAX(no_faktur) FROM transaction";
+            string query = "SELECT MAX(no_faktur) FROM transaction WHERE DATE(tgl) = DATE(@tgl)";
+            DateTime waktu = new DateTime();
+            waktu = DateTime.Now;
+
+            string txtWaktu = waktu.ToString("yyyy/dd/MM");
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -34,6 +38,7 @@ namespace tes
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
+                    cmd.Parameters.AddWithValue("@tgl", txtWaktu);
                     object result = cmd.ExecuteScalar();
 
                     if (result != DBNull.Value)
@@ -325,6 +330,36 @@ namespace tes
 
                 MessageBox.Show($"Kembalian: {kembalian.ToString("C", new CultureInfo("id-ID"))}", "Kembalian", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+        public class DataProduk
+        {
+            public string namaBarang { get; set; }
+            public string kodeBarang { get; set; }
+            public decimal Harga { get; set; }
+            public int QTY { get; set; }
+            public decimal Total { get; set; }
+        }
+
+        DataSet1 rf = new DataSet1();
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            List<DataProduk> lst = new List<DataProduk>();
+            lst.Clear();
+
+            for (int i = 0; i < lst.Count; i++)
+            {
+                DataSet1.DataSourceProdukRow newRow = rf.DataSourceProduk.NewDataSourceProdukRow();
+                newRow.NamaBarang = lst[i].namaBarang;
+                newRow.KodeBarang = lst[i].kodeBarang;
+                newRow.Harga = lst[i].Harga.ToString();
+                newRow.QTY = lst[i].QTY.ToString();
+                newRow.Total = lst[i].Total.ToString();
+
+                rf.DataSourceProduk.Rows.Add(newRow);
+            }
+
+            
         }
     }
 }

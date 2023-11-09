@@ -23,173 +23,90 @@ namespace tes
         {
             InitializeComponent();
         }
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            FormReceivablesDetails Form = new FormReceivablesDetails();
-            Form.ShowDialog();
-        }
 
-        private void searchData()
+        private void GetDataByDate()
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT DISTINCT no_faktur, DATE(tgl) AS tgl, nama_pelanggan, alamat, total_barang, total_harga, payment, DATE(jatuh_tempo) AS jatuh_tempo, status FROM tb_transaksi WHERE no_faktur LIKE '%" + SEARCH.Text + "%' OR nama_pelanggan LIKE '%" + SEARCH.Text + "%'";
+            string query = "SELECT no_faktur, tgl, kode, nama, qty, harga, laba FROM transaction WHERE DATE(tgl) = DATE(@tgl) AND payment = 'kredit'";
+
+            DateTime tgl = STARTDATE.Value;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
+                    // Mengatur parameter tanggal
+                    cmd.Parameters.Add("@tgl", MySqlDbType.DateTime).Value = tgl;
+
+                    Console.WriteLine(tgl);
                     try
                     {
-                        decimal totalPenjualan = 0;
-
                         connection.Open();
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             // Mengecek apakah ada data yang bisa dibaca
+                            dgv.Rows.Clear();
                             if (reader.HasRows)
                             {
                                 // Bersihkan DataGridView jika sudah ada data sebelumnya
-                                dgv.Rows.Clear();
 
                                 // Loop melalui hasil pembacaan
                                 while (reader.Read())
                                 {
-                                    int no_faktur = reader.GetInt32(0);
-                                    string tgl = reader.GetDateTime(1).ToString("yyyy-MM-dd");
-                                    string namaPelanggan = reader.GetString(2);
-                                    string status = reader.GetString(8);
-                                    string alamat = reader.GetString(3);
-                                    int totalBarang = reader.GetInt32(4);
-                                    decimal totalHarga = reader.GetDecimal(5);
+                                    // Mengambil nilai dari hasil pembacaan
+                                    string noFaktur = reader["no_faktur"].ToString();
+                                    DateTime tanggal = Convert.ToDateTime(reader["tgl"]);
+                                    string kode = reader["kode"].ToString();
+                                    string nama = reader["nama"].ToString();
+                                    int qty = Convert.ToInt32(reader["qty"]);
+                                    decimal harga = Convert.ToDecimal(reader["harga"]);
+                                    string strharga = harga.ToString("C", new CultureInfo("ID-id"));
+                                    decimal laba = Convert.ToDecimal(reader["laba"]);
+                                    string strlaba = laba.ToString("C", new CultureInfo("ID-id"));
 
-                                    string jatuh_tempo = reader.GetDateTime(7).ToString("yyyy-MM-dd");
-                                    string total_harga = totalHarga.ToString("C", new CultureInfo("id-ID"));
-                                    total_harga = total_harga.Replace("Rp", "");
-                                    string payment = reader.GetString(6);
+                                    decimal subtotal = qty * harga;
+                                    string tanggalFormatted = tanggal.ToString("yyyy-MM-dd");
 
-                                    Image editIcon = Properties.Resources.icons8_info_24px_1;
-                                    Image returIcon = Properties.Resources.icons8_edit_20px;
-
-                                    if (payment == "kredit")
-                                    {
-                                        dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, jatuh_tempo, status, editIcon, returIcon);
-                                    }
-
-                                    totalPenjualan += totalHarga;
+                                    // Tambahkan data ke DataGridView
+                                    dgv.Rows.Add(noFaktur, tanggalFormatted, kode, nama, qty, strharga, strlaba, laba, subtotal);
                                 }
-
+                                string text = "TOTAL :";
+                                decimal total = 0;
+                                decimal labas = 0;
+                                int qtys = 0;
+                                for (int i = 0; i < dgv.Rows.Count;)
+                                {
+                                    total += decimal.Parse(dgv.Rows[i].Cells[8].Value.ToString());
+                                    labas += decimal.Parse(dgv.Rows[i].Cells[7].Value.ToString());
+                                    qtys += int.Parse(dgv.Rows[i].Cells[4].Value.ToString());
+                                    i++;
+                                }
+                                string totalText = total.ToString("C", new CultureInfo("id-ID"));
+                                string labaText = labas.ToString("C", new CultureInfo("id-ID"));
+                                dgv.Rows.Add("", "", "", "", "QTY: " + qtys, "TOTAL: " + totalText, "LABA: " + labaText);
                             }
                             else
                             {
-
-                                //MessageBox.Show("Tidak ada data yang ditemukan.");
+                                Console.WriteLine("A");
                             }
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Terjadi kesalahan 1: " + ex.Message);
+                        MessageBox.Show("Terjadi kesalahan: " + ex.Message);
                     }
                 }
             }
         }
 
-        private void BarangKeluar()
-        {
-            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT DISTINCT no_faktur, DATE(tgl) AS tgl, nama_pelanggan, alamat, total_barang, total_harga, payment, DATE(jatuh_tempo) AS jatuh_tempo, status FROM tb_transaksi";
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    try
-                    {
-                        decimal totalPenjualan = 0;
-                       
-                        connection.Open();
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            // Mengecek apakah ada data yang bisa dibaca
-                            if (reader.HasRows)
-                            {
-                                // Bersihkan DataGridView jika sudah ada data sebelumnya
-                                dgv.Rows.Clear();
-
-                                // Loop melalui hasil pembacaan
-                                while (reader.Read())
-                                {
-                                    int no_faktur = reader.GetInt32(0);
-                                    string tgl = reader.GetDateTime(1).ToString("yyyy-MM-dd");
-                                    string namaPelanggan = reader.GetString(2);
-                                    string status = reader.GetString(8);
-                                    string alamat = reader.GetString(3);
-                                    int totalBarang = reader.GetInt32(4);
-                                    decimal totalHarga = reader.GetDecimal(5);
-
-                                    string jatuh_tempo = reader.GetDateTime(7).ToString("yyyy-MM-dd");
-                                    string total_harga = totalHarga.ToString("C", new CultureInfo("id-ID"));
-                                    total_harga = total_harga.Replace("Rp", "");
-                                    string payment = reader.GetString(6);
-
-                                    Image editIcon = Properties.Resources.icons8_info_24px_1;
-                                    Image returIcon = Properties.Resources.icons8_edit_20px;
-
-                                    if (payment == "Kredit")
-                                    {
-                                        dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, jatuh_tempo, status, editIcon, returIcon);
-                                    }
-
-                                    totalPenjualan += totalHarga;
-                                }
-
-                            }
-                            else
-                            {
-                                
-                                //MessageBox.Show("Tidak ada data yang ditemukan.");
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Terjadi kesalahan 1: " + ex.Message);
-                    }
-                }
-            }
-        }
         private void FormReceivables_Load(object sender, EventArgs e)
         {
-            BarangKeluar();
+            STARTDATE.Value = DateTime.Now;
         }
-
-        private void SEARCH_TextChanged(object sender, EventArgs e)
+        private void STARTDATE_ValueChanged(object sender, EventArgs e)
         {
-            searchData();
-        }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dgv.Columns["column7"].Index && e.RowIndex >= 0)
-            {
-                int nofaktur = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["column1"].Value);
-                //FrmCetakFaktur frmCetak = new FrmCetakFaktur();
-                //frmCetak.NoFaktur = nofaktur.ToString();
-                //frmCetak.ShowDialog();
-            }
-            else if (e.ColumnIndex == dgv.Columns["column8"].Index && e.RowIndex >= 0)
-            {
-                int nofaktur = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["column1"].Value);
-                FormReceivablesDetails frmRetur = new FormReceivablesDetails();
-                frmRetur.NoFaktur = nofaktur.ToString();
-                frmRetur.FormClosed += new FormClosedEventHandler(FormReceivablesDetails_Closed);
-                frmRetur.ShowDialog();
-            }
-        }
-
-        private void FormReceivablesDetails_Closed(object sender, FormClosedEventArgs e)
-        {
-            BarangKeluar();
+            GetDataByDate();
+            DateTime tgl = STARTDATE.Value;
         }
     }
 }

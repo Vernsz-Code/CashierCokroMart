@@ -343,3 +343,13 @@ C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\cashierCokro.csproj.Cor
 C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\cashierCokro.csproj.CopyComplete
 C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\tes.exe
 C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\tes.pdb
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\RdlCompile.cache
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\RdlCompile.compiled
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\tes.FormStruk.resources
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\EPPlus.dll
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\EPPlus.xml
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

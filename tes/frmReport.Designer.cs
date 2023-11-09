@@ -29,14 +29,12 @@ namespace tes
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.PRINTALL = new Guna.UI2.WinForms.Guna2Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.STARTDATE = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_TOTALKEUNTUNGAN = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,39 +43,23 @@ namespace tes
             this.label2 = new System.Windows.Forms.Label();
             this.groupDataPenjualan = new System.Windows.Forms.GroupBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lbl_TGL = new System.Windows.Forms.Label();
+            this.lbl_tanggal = new System.Windows.Forms.Label();
+            this.btnExport = new Guna.UI2.WinForms.Guna2Button();
+            this.PRINTALL = new Guna.UI2.WinForms.Guna2Button();
+            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_TGL = new System.Windows.Forms.Label();
-            this.lbl_tanggal = new System.Windows.Forms.Label();
             this.groupDataPenjualan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PRINTALL
-            // 
-            this.PRINTALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PRINTALL.BorderRadius = 12;
-            this.PRINTALL.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PRINTALL.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PRINTALL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PRINTALL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PRINTALL.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
-            this.PRINTALL.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PRINTALL.ForeColor = System.Drawing.Color.White;
-            this.PRINTALL.Image = global::tes.Properties.Resources.icons8_print_24px;
-            this.PRINTALL.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PRINTALL.Location = new System.Drawing.Point(773, 12);
-            this.PRINTALL.Name = "PRINTALL";
-            this.PRINTALL.Size = new System.Drawing.Size(40, 30);
-            this.PRINTALL.TabIndex = 20;
-            this.PRINTALL.Visible = false;
             // 
             // STARTDATE
             // 
@@ -96,29 +78,6 @@ namespace tes
             this.STARTDATE.TabIndex = 18;
             this.STARTDATE.Value = new System.DateTime(2023, 9, 1, 11, 34, 0, 0);
             this.STARTDATE.ValueChanged += new System.EventHandler(this.STARTDATE_ValueChanged);
-            // 
-            // SEARCH
-            // 
-            this.SEARCH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SEARCH.BorderRadius = 15;
-            this.SEARCH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SEARCH.DefaultText = "";
-            this.SEARCH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SEARCH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SEARCH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SEARCH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SEARCH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SEARCH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SEARCH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SEARCH.IconRight = ((System.Drawing.Image)(resources.GetObject("SEARCH.IconRight")));
-            this.SEARCH.Location = new System.Drawing.Point(819, 12);
-            this.SEARCH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SEARCH.Name = "SEARCH";
-            this.SEARCH.PasswordChar = '\0';
-            this.SEARCH.PlaceholderText = "Cari Data";
-            this.SEARCH.SelectedText = "";
-            this.SEARCH.Size = new System.Drawing.Size(164, 30);
-            this.SEARCH.TabIndex = 16;
             // 
             // lbl_TOTALKEUNTUNGAN
             // 
@@ -229,8 +188,8 @@ namespace tes
             this.Column2,
             this.Column3,
             this.Column4,
+            this.Column5,
             this.Column6,
-            this.Column9,
             this.Column7,
             this.Column8,
             this.Column10});
@@ -284,6 +243,90 @@ namespace tes
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
+            // lbl_TGL
+            // 
+            this.lbl_TGL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_TGL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TGL.Location = new System.Drawing.Point(10, 567);
+            this.lbl_TGL.Name = "lbl_TGL";
+            this.lbl_TGL.Size = new System.Drawing.Size(177, 32);
+            this.lbl_TGL.TabIndex = 21;
+            this.lbl_TGL.Text = "Penjualan Tanggal";
+            this.lbl_TGL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_tanggal
+            // 
+            this.lbl_tanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_tanggal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tanggal.Location = new System.Drawing.Point(10, 599);
+            this.lbl_tanggal.Name = "lbl_tanggal";
+            this.lbl_tanggal.Size = new System.Drawing.Size(177, 32);
+            this.lbl_tanggal.TabIndex = 29;
+            this.lbl_tanggal.Text = "2000-4-24";
+            this.lbl_tanggal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.BorderRadius = 12;
+            this.btnExport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Image = global::tes.Properties.Resources.icons8_ms_excel_24px_3;
+            this.btnExport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnExport.Location = new System.Drawing.Point(727, 12);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(40, 30);
+            this.btnExport.TabIndex = 30;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // PRINTALL
+            // 
+            this.PRINTALL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PRINTALL.BorderRadius = 12;
+            this.PRINTALL.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PRINTALL.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PRINTALL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PRINTALL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PRINTALL.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
+            this.PRINTALL.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PRINTALL.ForeColor = System.Drawing.Color.White;
+            this.PRINTALL.Image = global::tes.Properties.Resources.icons8_print_24px;
+            this.PRINTALL.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.PRINTALL.Location = new System.Drawing.Point(773, 12);
+            this.PRINTALL.Name = "PRINTALL";
+            this.PRINTALL.Size = new System.Drawing.Size(40, 30);
+            this.PRINTALL.TabIndex = 20;
+            this.PRINTALL.Visible = false;
+            this.PRINTALL.Click += new System.EventHandler(this.PRINTALL_Click);
+            // 
+            // SEARCH
+            // 
+            this.SEARCH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SEARCH.BorderRadius = 15;
+            this.SEARCH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SEARCH.DefaultText = "";
+            this.SEARCH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SEARCH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SEARCH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SEARCH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SEARCH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SEARCH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SEARCH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SEARCH.IconRight = ((System.Drawing.Image)(resources.GetObject("SEARCH.IconRight")));
+            this.SEARCH.Location = new System.Drawing.Point(819, 12);
+            this.SEARCH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SEARCH.Name = "SEARCH";
+            this.SEARCH.PasswordChar = '\0';
+            this.SEARCH.PlaceholderText = "Cari Data";
+            this.SEARCH.SelectedText = "";
+            this.SEARCH.Size = new System.Drawing.Size(164, 30);
+            this.SEARCH.TabIndex = 16;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "No Faktur";
@@ -312,19 +355,19 @@ namespace tes
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Qty";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // Column6
             // 
-            this.Column6.HeaderText = "Qty";
+            this.Column6.HeaderText = "Harga";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Harga";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
             // 
             // Column7
             // 
@@ -347,33 +390,12 @@ namespace tes
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
             // 
-            // lbl_TGL
-            // 
-            this.lbl_TGL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_TGL.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TGL.Location = new System.Drawing.Point(10, 567);
-            this.lbl_TGL.Name = "lbl_TGL";
-            this.lbl_TGL.Size = new System.Drawing.Size(177, 32);
-            this.lbl_TGL.TabIndex = 21;
-            this.lbl_TGL.Text = "Penjualan Tanggal";
-            this.lbl_TGL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl_tanggal
-            // 
-            this.lbl_tanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_tanggal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tanggal.Location = new System.Drawing.Point(10, 599);
-            this.lbl_tanggal.Name = "lbl_tanggal";
-            this.lbl_tanggal.Size = new System.Drawing.Size(177, 32);
-            this.lbl_tanggal.TabIndex = 29;
-            this.lbl_tanggal.Text = "2000-4-24";
-            this.lbl_tanggal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 640);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.lbl_tanggal);
             this.Controls.Add(this.groupDataPenjualan);
             this.Controls.Add(this.lbl_TOTALKEUNTUNGAN);
@@ -410,12 +432,13 @@ namespace tes
         private Guna.UI2.WinForms.Guna2DataGridView dgv;
         private System.Windows.Forms.Label lbl_TGL;
         private System.Windows.Forms.Label lbl_tanggal;
+        private Guna.UI2.WinForms.Guna2Button btnExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
