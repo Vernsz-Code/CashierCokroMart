@@ -12,27 +12,28 @@ using Microsoft.Reporting.WinForms;
 
 namespace tes
 {
-    public partial class FormCetakFaktur : Form
+    public partial class FormCetakFakturTunai : Form
     {
         string server = "localhost";
         string database = "cashier";
         string uid = "root";
         string password = "";
 
+        DataSet1 dataSet1 = new DataSet1();
+
         public string no_faktur { get; set; }
         public string tgl { get; set; }
-
-        public FormCetakFaktur()
+        public FormCetakFakturTunai()
         {
             InitializeComponent();
         }
 
-        DataSet1 dataSet1 = new DataSet1();
-        private void FormCetakFaktur_Load(object sender, EventArgs e)
+        private void FormCetakFakturTunai_Load(object sender, EventArgs e)
         {
+
             Console.WriteLine(tgl);
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "select namaPelanggan, no_faktur, tgl, nama, kode, harga, qty, subtotal, Tunai from transaction where no_faktur = '" + no_faktur + "' AND Date(tgl) = '" + tgl + "' ;";
+            string query = "select no_faktur, tgl, nama, kode, harga, qty, subtotal, Tunai from transaction where no_faktur = '" + no_faktur + "' AND Date(tgl) = '" + tgl + "' ;";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -45,7 +46,7 @@ namespace tes
             ReportDataSource reportDataSource = new ReportDataSource("DataSet1", dataSet1.Tables["DataSourceProduk"]);
             reportViewer1.LocalReport.DataSources.Add(reportDataSource);
 
-            reportViewer1.LocalReport.ReportPath = $"{Application.StartupPath}/Report1.rdlc";
+            reportViewer1.LocalReport.ReportPath = $"{Application.StartupPath}/Report2.rdlc";
 
             reportViewer1.SetPageSettings(new System.Drawing.Printing.PageSettings
             {

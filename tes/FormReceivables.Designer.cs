@@ -209,7 +209,7 @@ namespace tes
             this.STARTDATE.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.STARTDATE.ForeColor = System.Drawing.Color.White;
             this.STARTDATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.STARTDATE.Location = new System.Drawing.Point(1002, 48);
+            this.STARTDATE.Location = new System.Drawing.Point(1002, 43);
             this.STARTDATE.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.STARTDATE.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.STARTDATE.Name = "STARTDATE";

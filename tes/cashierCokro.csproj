@@ -169,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarangInfo.cs" />
+    <Compile Include="BarangMasuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarangMasuk.Designer.cs">
+      <DependentUpon>BarangMasuk.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -189,11 +195,23 @@
     <Compile Include="FormAddStaff.Designer.cs">
       <DependentUpon>FormAddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBarangMasuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBarangMasuk.Designer.cs">
+      <DependentUpon>FormBarangMasuk.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCetakFaktur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCetakFaktur.Designer.cs">
       <DependentUpon>FormCetakFaktur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCetakFakturTunai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCetakFakturTunai.Designer.cs">
+      <DependentUpon>FormCetakFakturTunai.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDashboard.cs">
       <SubType>Form</SubType>
@@ -294,14 +312,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="BarangMasuk.resx">
+      <DependentUpon>BarangMasuk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddKas.resx">
       <DependentUpon>FormAddKas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddStaff.resx">
       <DependentUpon>FormAddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBarangMasuk.resx">
+      <DependentUpon>FormBarangMasuk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCetakFaktur.resx">
       <DependentUpon>FormCetakFaktur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCetakFakturTunai.resx">
+      <DependentUpon>FormCetakFakturTunai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
@@ -362,6 +389,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportStruk.rdlc" />

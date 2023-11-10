@@ -39,7 +39,8 @@ JL.Hos Cokroaminoto No.102</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>0.4732in</Left>
+        <Top>0.18748in</Top>
+        <Left>0.49185in</Left>
         <Height>0.44792in</Height>
         <Width>1.5325in</Width>
         <Style>
@@ -73,8 +74,8 @@ JL.Hos Cokroaminoto No.102</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.92709in</Top>
-        <Left>0.11214in</Left>
+        <Top>0.91665in</Top>
+        <Left>0.12146in</Left>
         <Height>0.19792in</Height>
         <Width>0.66667in</Width>
         <ZIndex>1</ZIndex>
@@ -109,47 +110,11 @@ JL.Hos Cokroaminoto No.102</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.72917in</Top>
-        <Left>0.11214in</Left>
+        <Top>0.71873in</Top>
+        <Left>0.12146in</Left>
         <Height>0.19792in</Height>
         <Width>0.66666in</Width>
         <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Nama</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.51736in</Top>
-        <Left>0.11214in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.66666in</Width>
-        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -189,11 +154,11 @@ JL.Hos Cokroaminoto No.102</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.92709in</Top>
-        <Left>0.80658in</Left>
+        <Top>0.91665in</Top>
+        <Left>0.81589in</Left>
         <Height>0.19792in</Height>
         <Width>1.62377in</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -233,10 +198,46 @@ JL.Hos Cokroaminoto No.102</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.72917in</Top>
-        <Left>0.80658in</Left>
+        <Top>0.71873in</Top>
+        <Left>0.81589in</Left>
         <Height>0.19792in</Height>
         <Width>1.62376in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Kembali</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.69791in</Top>
+        <Left>0.82518in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.66666in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -248,7 +249,7 @@ JL.Hos Cokroaminoto No.102</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox7">
+      <Textbox Name="Textbox17">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -263,7 +264,7 @@ JL.Hos Cokroaminoto No.102</Value>
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!namaPelanggan.Value</Value>
+                <Value>=Format(Fields!Tunai.Value - SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
                 <Style>
                   <FontFamily>Bahnschrift</FontFamily>
                   <FontSize>9pt</FontSize>
@@ -277,10 +278,10 @@ JL.Hos Cokroaminoto No.102</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.51736in</Top>
-        <Left>0.80658in</Left>
+        <Top>2.69791in</Top>
+        <Left>1.5613in</Left>
         <Height>0.19792in</Height>
-        <Width>1.62376in</Width>
+        <Width>0.87846in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -292,7 +293,179 @@ JL.Hos Cokroaminoto No.102</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Tablix Name="Tablix2">
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tunai</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.41666in</Top>
+        <Left>0.82524in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.66666in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>: </Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Format(Fields!Tunai.Value, "N0")</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.41666in</Top>
+        <Left>1.56135in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.87845in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.19096in</Top>
+        <Left>0.82524in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.66666in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>: </Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Format(SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.19096in</Top>
+        <Left>1.56135in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.87845in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line1">
+        <Top>2.68402in</Top>
+        <Left>0.82524in</Left>
+        <Height>0in</Height>
+        <Width>1.61452in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Tablix Name="Tablix3">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
@@ -349,7 +522,7 @@ JL.Hos Cokroaminoto No.102</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox29">
+                    <Textbox Name="Textbox32">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -384,7 +557,7 @@ JL.Hos Cokroaminoto No.102</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox31">
+                    <Textbox Name="Textbox33">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -419,7 +592,7 @@ JL.Hos Cokroaminoto No.102</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox33">
+                    <Textbox Name="Textbox34">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -680,7 +853,7 @@ JL.Hos Cokroaminoto No.102</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(SUM(Fields!qty.Value, "DataSet1"))</Value>
+                              <Value>=Format(Sum(Fields!qty.Value, "DataSet1"))</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -714,7 +887,7 @@ JL.Hos Cokroaminoto No.102</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
+                              <Value>=Format(Sum(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -755,7 +928,7 @@ JL.Hos Cokroaminoto No.102</Value>
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Details2" />
               <TablixMembers>
                 <TablixMember />
               </TablixMembers>
@@ -766,269 +939,17 @@ JL.Hos Cokroaminoto No.102</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.32293in</Top>
-        <Left>0.11214in</Left>
+        <Top>1.30901in</Top>
+        <Left>0.12146in</Left>
         <Height>0.69792in</Height>
         <Width>2.3182in</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox9">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Kembali</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.70835in</Top>
-        <Left>0.81587in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.66666in</Width>
-        <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>: </Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Format(Fields!Tunai.Value - SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.70835in</Top>
-        <Left>1.55198in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.87846in</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox10">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Tunai</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.4271in</Top>
-        <Left>0.81592in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.66666in</Width>
-        <ZIndex>10</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox18">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>: </Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Format(Fields!Tunai.Value, "N0")</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.4271in</Top>
-        <Left>1.55203in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.87845in</Width>
-        <ZIndex>11</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox11">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Total</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.2014in</Top>
-        <Left>0.81592in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.66666in</Width>
-        <ZIndex>12</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox19">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>: </Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Format(SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.2014in</Top>
-        <Left>1.55203in</Left>
-        <Height>0.19792in</Height>
-        <Width>0.87845in</Width>
-        <ZIndex>13</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line1">
-        <Top>2.69446in</Top>
-        <Left>0.81592in</Left>
-        <Height>0in</Height>
-        <Width>1.61452in</Width>
-        <ZIndex>14</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
     <Height>4.46875in</Height>
     <Style />
@@ -1048,7 +969,7 @@ JL.Hos Cokroaminoto No.102</Value>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>554c9e5f-fa15-4a86-9f66-a0615981e64c</rd:DataSourceID>
+      <rd:DataSourceID>11962810-3c20-457f-8e54-aeaf12ece6a1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1080,7 +1001,7 @@ JL.Hos Cokroaminoto No.102</Value>
         </Field>
         <Field Name="harga">
           <DataField>harga</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="qty">
           <DataField>qty</DataField>
@@ -1092,7 +1013,7 @@ JL.Hos Cokroaminoto No.102</Value>
         </Field>
         <Field Name="Tunai">
           <DataField>Tunai</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -1106,5 +1027,5 @@ JL.Hos Cokroaminoto No.102</Value>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>c5e90da4-d89e-4146-a3d7-917721b47724</rd:ReportID>
+  <rd:ReportID>6bb49083-daa4-4d55-bf56-f02a001b1c3f</rd:ReportID>
 </Report>

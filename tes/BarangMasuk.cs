@@ -8,19 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Globalization;
-
 
 namespace tes
 {
-    public partial class FormDebt : Form
+    public partial class BarangMasuk : Form
     {
         string server = "localhost";
         string database = "cashier";
         string uid = "root";
         string password = "";
 
-        public FormDebt()
+        public BarangMasuk()
         {
             InitializeComponent();
         }
@@ -28,7 +26,7 @@ namespace tes
         private void LoadLaporan()
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT * FROM transaction_in WHERE payment = 'kredit' and DATE(tgl) = @tgl";
+            string query = "SELECT * FROM transaction_in WHERE payment = 'tunai' and DATE(tgl) = @tgl";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -71,7 +69,7 @@ namespace tes
             }
         }
 
-        private void FormDebt_Load(object sender, EventArgs e)
+        private void BarangMasuk_Load(object sender, EventArgs e)
         {
             STARTDATE.Value = DateTime.Now;
         }

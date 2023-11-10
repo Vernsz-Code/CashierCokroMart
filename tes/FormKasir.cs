@@ -80,65 +80,67 @@ namespace tes
             {
                 connection.Open();
 
-                string query = "SELECT * FROM product WHERE kode_brg = @kode_brg";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@kode_brg", kode_brg);
-
-                bool found = false;
-
-                foreach (DataGridViewRow row in dgv.Rows)
+                string query = "SELECT * FROM product WHERE kode_brg = @kode_brg and stok_akhir > 0;";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    if (row.Cells["KodeBarang"].Value != null && row.Cells["KodeBarang"].Value.ToString() == kode_brg)
+                    command.Parameters.AddWithValue("@kode_brg", kode_brg);
+
+                    bool found = false;
+
+                    foreach (DataGridViewRow row in dgv.Rows)
                     {
-                        int rowIndex = row.Index;
-                        int qty = Convert.ToInt32(dgv.Rows[rowIndex].Cells["Qty"].Value) + 1;
-                        int stok = Convert.ToInt32(dgv.Rows[rowIndex].Cells["Stok"].Value);
-
-                        if (stok < qty)
+                        if (row.Cells["KodeBarang"].Value != null && row.Cells["KodeBarang"].Value.ToString() == kode_brg)
                         {
-                            MessageBox.Show("Stok tidak mencukupi untuk menambahkan barang.");
-                            txtScan.Text = "";
-                            found = true;
+                            int rowIndex = row.Index;
+                            int qty = Convert.ToInt32(dgv.Rows[rowIndex].Cells["Qty"].Value) + 1;
+                            int stok = Convert.ToInt32(dgv.Rows[rowIndex].Cells["Stok"].Value);
+
+                            if (stok < qty)
+                            {
+                                MessageBox.Show("Stok tidak mencukupi untuk menambahkan barang.");
+                                txtScan.Text = "";
+                                found = true;
+                            }
+                            else
+                            {
+                                dgv.Rows[rowIndex].Cells["Qty"].Value = qty;
+
+                                decimal hargaJual = Convert.ToDecimal(row.Cells["HargaJual"].Value);
+                                decimal subtotal = qty * hargaJual;
+                                dgv.Rows[rowIndex].Cells["Subtotal"].Value = subtotal;
+
+                                txtScan.Text = "";
+                                UpdateTotalLabels();
+                                found = true;
+                            }
+
                         }
-                        else
-                        {
-                            dgv.Rows[rowIndex].Cells["Qty"].Value = qty;
-
-                            decimal hargaJual = Convert.ToDecimal(row.Cells["HargaJual"].Value);
-                            decimal subtotal = qty * hargaJual;
-                            dgv.Rows[rowIndex].Cells["Subtotal"].Value = subtotal;
-
-                            txtScan.Text = "";
-                            UpdateTotalLabels();
-                            found = true;
-                        }
-
                     }
-                }
 
-                if (!found)
-                {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    if (!found)
                     {
-                        if (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string kodeBarang = reader["kode_brg"].ToString();
-                            string namaBarang = reader["nama_brg"].ToString();
-                            string stok = reader["stok_akhir"].ToString();
-                            decimal hargaJual = Convert.ToDecimal(reader["jual"]);
-                            decimal markUp = Convert.ToDecimal(reader["mark_up"]);
+                            if (reader.Read())
+                            {
+                                string kodeBarang = reader["kode_brg"].ToString();
+                                string namaBarang = reader["nama_brg"].ToString();
+                                string stok = reader["stok_akhir"].ToString();
+                                decimal hargaJual = Convert.ToDecimal(reader["jual"]);
+                                decimal markUp = Convert.ToDecimal(reader["mark_up"]);
 
-                            int qty = 1;
-                            decimal subtotal = qty * hargaJual;
+                                int qty = 1;
+                                decimal subtotal = qty * hargaJual;
 
-                            Image deleteIcon = Properties.Resources.icons8_delete_24px_1;
+                                Image deleteIcon = Properties.Resources.icons8_delete_24px_1;
 
-                            dgv.Rows.Add(kodeBarang, namaBarang, hargaJual, qty, "0", "0", subtotal, stok, markUp, markUp, deleteIcon);
-                            txtScan.Text = "";
-                        }
-                        else
-                        {
-
+                                dgv.Rows.Add(kodeBarang, namaBarang, hargaJual, qty, "0", "0", subtotal, stok, markUp, markUp, deleteIcon);
+                                txtScan.Text = "";
+                            }
+                            else
+                            {
+                                //MessageBox.Show("Data Tidak Di Temukan Atau Stok Habis!!!");
+                            }
                         }
                     }
                 }
@@ -295,58 +297,7 @@ namespace tes
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string noFaktur = lbl_NOFAKTUR.Text;
-            kurangStok();
-            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    string kodeBarang = row.Cells["KodeBarang"].Value.ToString();
-                    string nama = row.Cells["NamaBarang"].Value.ToString();
-                    int qty = Convert.ToInt32(row.Cells["Qty"].Value);
-                    decimal hargaJual = Convert.ToDecimal(row.Cells["HargaJual"].Value);
-                    decimal subtotal = Convert.ToDecimal(row.Cells["Subtotal"].Value);
-                    decimal markUp = Convert.ToDecimal(row.Cells["MarkUp"].Value);
-                    decimal laba = Convert.ToDecimal(row.Cells["Laba"].Value);
-                    string namaPelanggan;
-                    string payment;
-                    decimal Tunai = decimal.Parse(txtBayar.Text.ToString());
-
-                    if (checkBox1.Checked)
-                    {
-                        payment = "kredit";
-                        namaPelanggan = namaTextBox.Text;
-                    }
-                    else
-                    {
-                        payment = "tunai";
-                        namaPelanggan = "-";
-                    }
-
-                    string insertQuery = "INSERT INTO transaction (no_faktur, kode, nama, qty, harga, subtotal, mark_up, laba, payment, namaPelanggan, Tunai) " +
-                                            "VALUES (@no_faktur, @kode_barang, @nama_barang, @qty, @harga_jual, @subtotal, @mark_up, @laba, @payment, @namaP, @Tunai)";
-
-                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
-                    command.Parameters.AddWithValue("@no_faktur", noFaktur);
-                    command.Parameters.AddWithValue("@kode_barang", kodeBarang);
-                    command.Parameters.AddWithValue("@nama_barang", nama);
-                    command.Parameters.AddWithValue("@qty", qty);
-                    command.Parameters.AddWithValue("@harga_jual", hargaJual);
-                    command.Parameters.AddWithValue("@subtotal", subtotal);
-                    command.Parameters.AddWithValue("@mark_up", markUp);
-                    command.Parameters.AddWithValue("@laba", laba);
-                    command.Parameters.AddWithValue("@payment", payment);
-                    command.Parameters.AddWithValue("@namaP", namaPelanggan);
-                    command.Parameters.AddWithValue("@Tunai", Tunai);
-
-                    command.ExecuteNonQuery();
-                    Console.WriteLine("a");
-                }
-                ClearAll();
-            }
+            
         }
 
         private void btnBayar_Click(object sender, EventArgs e)
@@ -378,10 +329,6 @@ namespace tes
 
         DataSet1 rf = new DataSet1();
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -394,6 +341,90 @@ namespace tes
             {
                 label5.Visible = false;
                 namaTextBox.Visible = false;
+            }
+        }
+
+        private void insert()
+        {
+            string noFaktur = lbl_NOFAKTUR.Text;
+            kurangStok();
+            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    string kodeBarang = row.Cells["KodeBarang"].Value.ToString();
+                    string nama = row.Cells["NamaBarang"].Value.ToString();
+                    int qty = Convert.ToInt32(row.Cells["Qty"].Value);
+                    decimal hargaJual = Convert.ToDecimal(row.Cells["HargaJual"].Value);
+                    decimal subtotal = Convert.ToDecimal(row.Cells["Subtotal"].Value);
+                    decimal markUp = Convert.ToDecimal(row.Cells["MarkUp"].Value);
+                    decimal laba = Convert.ToDecimal(row.Cells["Laba"].Value);
+                    string namaPelanggan;
+                    string payment;
+                    decimal Tunai = decimal.Parse(txtBayar.Text.ToString().Replace(".", ""));
+
+                    if (checkBox1.Checked)
+                    {
+                        payment = "kredit";
+                        namaPelanggan = namaTextBox.Text;
+                    }
+                    else
+                    {
+                        payment = "tunai";
+                        namaPelanggan = "-";
+                    }
+
+                    string insertQuery = "INSERT INTO transaction (no_faktur, kode, nama, qty, harga, subtotal, mark_up, laba, payment, namaPelanggan, Tunai) " +
+                                            "VALUES (@no_faktur, @kode_barang, @nama_barang, @qty, @harga_jual, @subtotal, @mark_up, @laba, @payment, @namaP, @Tunai)";
+
+                    MySqlCommand command = new MySqlCommand(insertQuery, connection);
+                    command.Parameters.AddWithValue("@no_faktur", noFaktur);
+                    command.Parameters.AddWithValue("@kode_barang", kodeBarang);
+                    command.Parameters.AddWithValue("@nama_barang", nama);
+                    command.Parameters.AddWithValue("@qty", qty);
+                    command.Parameters.AddWithValue("@harga_jual", hargaJual);
+                    command.Parameters.AddWithValue("@subtotal", subtotal);
+                    command.Parameters.AddWithValue("@mark_up", markUp);
+                    command.Parameters.AddWithValue("@laba", laba);
+                    command.Parameters.AddWithValue("@payment", payment);
+                    command.Parameters.AddWithValue("@namaP", namaPelanggan);
+                    command.Parameters.AddWithValue("@Tunai", Tunai);
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+                DateTime tgl = DateTime.Now;
+                if(checkBox1.Checked == true) {
+                FormCetakFaktur frmCetak = new FormCetakFaktur();
+                frmCetak.no_faktur = noFaktur;
+                frmCetak.tgl = tgl.ToString("yyyy-MM-dd");
+                frmCetak.ShowDialog();
+                }
+                else
+                {
+                    FormCetakFakturTunai frmCetak = new FormCetakFakturTunai();
+                    frmCetak.no_faktur = noFaktur;
+                    frmCetak.tgl = tgl.ToString("yyyy-MM-dd");
+                    frmCetak.ShowDialog();
+                }
+                ClearAll();
+            }
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (txtBayar.Text != "")
+            {
+                insert();
+            }
+            else
+            {
+                MessageBox.Show("Tunai Harus Di Isi");
             }
         }
     }

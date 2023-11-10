@@ -10,7 +10,7 @@
             <TextRuns>
               <TextRun>
                 <Value>Cokro4Mart
-JL.Hos Cokroaminoto No.103</Value>
+JL.Hos Cokroaminoto No.102</Value>
                 <Style>
                   <FontFamily>Bahnschrift</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -39,8 +39,7 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.13542in</Top>
-        <Left>0.94195in</Left>
+        <Left>0.4732in</Left>
         <Height>0.44792in</Height>
         <Width>1.5325in</Width>
         <Style>
@@ -74,8 +73,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>1.23833in</Top>
-        <Left>0.10292in</Left>
+        <Top>0.92709in</Top>
+        <Left>0.11214in</Left>
         <Height>0.19792in</Height>
         <Width>0.66667in</Width>
         <ZIndex>1</ZIndex>
@@ -110,8 +109,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>1.04041in</Top>
-        <Left>0.10292in</Left>
+        <Top>0.72917in</Top>
+        <Left>0.11214in</Left>
         <Height>0.19792in</Height>
         <Width>0.66666in</Width>
         <ZIndex>2</ZIndex>
@@ -146,8 +145,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.8286in</Top>
-        <Left>0.10292in</Left>
+        <Top>0.51736in</Top>
+        <Left>0.11214in</Left>
         <Height>0.19792in</Height>
         <Width>0.66666in</Width>
         <ZIndex>3</ZIndex>
@@ -168,6 +167,14 @@ JL.Hos Cokroaminoto No.103</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
+                <Value>: </Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
                 <Value>=Fields!tgl.Value</Value>
                 <Style>
                   <FontFamily>Bahnschrift</FontFamily>
@@ -182,10 +189,10 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>1.23833in</Top>
-        <Left>0.79736in</Left>
+        <Top>0.92709in</Top>
+        <Left>0.80658in</Left>
         <Height>0.19792in</Height>
-        <Width>2.45834in</Width>
+        <Width>1.62377in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -204,6 +211,14 @@ JL.Hos Cokroaminoto No.103</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
+                <Value>: </Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
                 <Value>=Fields!no_faktur.Value</Value>
                 <Style>
                   <FontFamily>Bahnschrift</FontFamily>
@@ -218,10 +233,10 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>1.04041in</Top>
-        <Left>0.79736in</Left>
+        <Top>0.72917in</Top>
+        <Left>0.80658in</Left>
         <Height>0.19792in</Height>
-        <Width>2.45833in</Width>
+        <Width>1.62376in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -240,6 +255,14 @@ JL.Hos Cokroaminoto No.103</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
+                <Value>: </Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
                 <Value>=Fields!namaPelanggan.Value</Value>
                 <Style>
                   <FontFamily>Bahnschrift</FontFamily>
@@ -254,10 +277,10 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.8286in</Top>
-        <Left>0.79736in</Left>
+        <Top>0.51736in</Top>
+        <Left>0.80658in</Left>
         <Height>0.19792in</Height>
-        <Width>2.45833in</Width>
+        <Width>1.62376in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -273,10 +296,7 @@ JL.Hos Cokroaminoto No.103</Value>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.83903in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.83458in</Width>
+              <Width>0.95361in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.53125in</Width>
@@ -285,12 +305,12 @@ JL.Hos Cokroaminoto No.103</Value>
               <Width>0.32292in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.625in</Width>
+              <Width>0.51042in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.23264in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -305,7 +325,6 @@ JL.Hos Cokroaminoto No.103</Value>
                               <Style>
                                 <FontFamily>Bahnschrift</FontFamily>
                                 <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -315,42 +334,6 @@ JL.Hos Cokroaminoto No.103</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox15</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox27">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Kode Barang</Value>
-                              <Style>
-                                <FontFamily>Bahnschrift</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -377,7 +360,6 @@ JL.Hos Cokroaminoto No.103</Value>
                               <Style>
                                 <FontFamily>Bahnschrift</FontFamily>
                                 <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -413,7 +395,6 @@ JL.Hos Cokroaminoto No.103</Value>
                               <Style>
                                 <FontFamily>Bahnschrift</FontFamily>
                                 <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -449,7 +430,6 @@ JL.Hos Cokroaminoto No.103</Value>
                               <Style>
                                 <FontFamily>Bahnschrift</FontFamily>
                                 <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -475,7 +455,7 @@ JL.Hos Cokroaminoto No.103</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.23264in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -488,7 +468,7 @@ JL.Hos Cokroaminoto No.103</Value>
                             <TextRun>
                               <Value>=Fields!nama.Value</Value>
                               <Style>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -496,38 +476,6 @@ JL.Hos Cokroaminoto No.103</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nama</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="kode">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!kode.Value</Value>
-                              <Style>
-                                <FontSize>9pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>kode</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -552,7 +500,7 @@ JL.Hos Cokroaminoto No.103</Value>
                             <TextRun>
                               <Value>=Format(Fields!harga.Value, "N0")</Value>
                               <Style>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -584,7 +532,7 @@ JL.Hos Cokroaminoto No.103</Value>
                             <TextRun>
                               <Value>=Fields!qty.Value</Value>
                               <Style>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -618,7 +566,7 @@ JL.Hos Cokroaminoto No.103</Value>
                             <TextRun>
                               <Value>=Format(Fields!subtotal.Value, "N0")</Value>
                               <Style>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -642,7 +590,7 @@ JL.Hos Cokroaminoto No.103</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.23264in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -668,38 +616,15 @@ JL.Hos Cokroaminoto No.103</Value>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox57">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontSize>9pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox57</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -732,6 +657,12 @@ JL.Hos Cokroaminoto No.103</Value>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -751,7 +682,7 @@ JL.Hos Cokroaminoto No.103</Value>
                             <TextRun>
                               <Value>=Format(SUM(Fields!qty.Value, "DataSet1"))</Value>
                               <Style>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -785,7 +716,7 @@ JL.Hos Cokroaminoto No.103</Value>
                             <TextRun>
                               <Value>=Format(SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
                               <Style>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -816,7 +747,6 @@ JL.Hos Cokroaminoto No.103</Value>
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -836,10 +766,10 @@ JL.Hos Cokroaminoto No.103</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.58208in</Top>
-        <Left>0.10292in</Left>
-        <Height>0.75in</Height>
-        <Width>3.15278in</Width>
+        <Top>1.32293in</Top>
+        <Left>0.11214in</Left>
+        <Height>0.69792in</Height>
+        <Width>2.3182in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -868,8 +798,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.61334in</Top>
-        <Left>1.64112in</Left>
+        <Top>2.70835in</Top>
+        <Left>0.81587in</Left>
         <Height>0.19792in</Height>
         <Width>0.66666in</Width>
         <ZIndex>8</ZIndex>
@@ -912,8 +842,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.61334in</Top>
-        <Left>2.37723in</Left>
+        <Top>2.70835in</Top>
+        <Left>1.55198in</Left>
         <Height>0.19792in</Height>
         <Width>0.87846in</Width>
         <ZIndex>9</ZIndex>
@@ -948,8 +878,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.40153in</Top>
-        <Left>1.64114in</Left>
+        <Top>2.4271in</Top>
+        <Left>0.81592in</Left>
         <Height>0.19792in</Height>
         <Width>0.66666in</Width>
         <ZIndex>10</ZIndex>
@@ -970,7 +900,7 @@ JL.Hos Cokroaminoto No.103</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>:</Value>
+                <Value>: </Value>
                 <Style>
                   <FontFamily>Bahnschrift</FontFamily>
                   <FontSize>9pt</FontSize>
@@ -992,8 +922,8 @@ JL.Hos Cokroaminoto No.103</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.40153in</Top>
-        <Left>2.37725in</Left>
+        <Top>2.4271in</Top>
+        <Left>1.55203in</Left>
         <Height>0.19792in</Height>
         <Width>0.87845in</Width>
         <ZIndex>11</ZIndex>
@@ -1007,11 +937,103 @@ JL.Hos Cokroaminoto No.103</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.2014in</Top>
+        <Left>0.81592in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.66666in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>: </Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Format(SUM(Fields!subtotal.Value, "DataSet1"), "N0")</Value>
+                <Style>
+                  <FontFamily>Bahnschrift</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.2014in</Top>
+        <Left>1.55203in</Left>
+        <Height>0.19792in</Height>
+        <Width>0.87845in</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line1">
+        <Top>2.69446in</Top>
+        <Left>0.81592in</Left>
+        <Height>0in</Height>
+        <Width>1.61452in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>4.46875in</Height>
     <Style />
   </Body>
-  <Width>3.405in</Width>
+  <Width>2.56125in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

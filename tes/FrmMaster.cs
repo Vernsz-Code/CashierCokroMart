@@ -66,6 +66,7 @@ namespace tes
             HARGAJUAL1.Text = "";
             DISTRIBUTOR.Text = "";
             PERCENTASE.Text = "0";
+            MARKUP.Text = "";
             Harta.Text = "";
         }
 

@@ -413,3 +413,7 @@ C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\pt\Microsoft.ReportView
 C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\tes.FormBarangMasuk.resources
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\tes.BarangMasuk.resources
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\obj\Debug\tes.FormCetakFakturTunai.resources
+C:\Users\smkn 4 bdl\Desktop\CashierBarcode\tes\bin\Debug\Report2.rdlc

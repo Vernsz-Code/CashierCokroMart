@@ -80,9 +80,17 @@ namespace tes
             btnFaktur.ForeColor = Color.Gainsboro;
             btnFaktur.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
+            btnBarangMasuk.BackColor = Color.FromArgb(27, 37, 71);
+            btnBarangMasuk.ForeColor = Color.Gainsboro;
+            btnBarangMasuk.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             button2.BackColor = Color.FromArgb(27, 37, 71);
             button2.ForeColor = Color.Gainsboro;
             button2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            button3.BackColor = Color.FromArgb(27, 37, 71);
+            button3.ForeColor = Color.Gainsboro;
+            button3.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnKas.BackColor = Color.FromArgb(27, 37, 71);
             btnKas.ForeColor = Color.Gainsboro;
@@ -129,7 +137,7 @@ namespace tes
         {
             activebutton(sender);
         }
-        
+
 
         private void btnFaktur_Click(object sender, EventArgs e)
         {
@@ -142,20 +150,7 @@ namespace tes
             LoadForm(new frmReport());
             activebutton(sender);
         }
-
-        private void btnDebt_Click(object sender, EventArgs e)
-        {
-            LoadForm(new FormDebt());
-            activebutton(sender);
-        }
-
-        private void btnClientDebt_Click(object sender, EventArgs e)
-        {
-            LoadForm(new FormReceivables());
-            activebutton(sender);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnKas_Click(object sender, EventArgs e)
         {
             LoadForm(new FormKas());
             activebutton(sender);
@@ -169,15 +164,45 @@ namespace tes
             {
                 btnClientDebt.Visible = true;
                 btnDebt.Visible = true;
+                btnBarangMasuk.Visible = true;
                 btnlaporan.Visible = true;
             }
             else
             {
                 btnlaporan.Visible = false;
                 btnDebt.Visible = false;
+                btnBarangMasuk.Visible = false;
                 btnClientDebt.Visible = false;
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FormBarangMasuk());
+            activebutton(sender);
+        }
+
+        private void btnBarangMasuk_Click(object sender, EventArgs e)
+        {
+            LoadForm(new BarangMasuk());
+            activebutton(sender);
+        }
+
+        private void btnlaporan_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new frmReport());
+            activebutton(sender);
+        }
+        private void btnDebt_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FormDebt());
+            activebutton(sender);
+        }
+
+        private void btnClientDebt_Click(object sender, EventArgs e)
+        {
+            LoadForm(new FormReceivables());
+            activebutton(sender);
+        }
     }
 }

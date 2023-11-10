@@ -45,9 +45,11 @@ namespace tes
             this.btnClientDebt = new System.Windows.Forms.Button();
             this.btnDebt = new System.Windows.Forms.Button();
             this.btnlaporan = new System.Windows.Forms.Button();
+            this.btnBarangMasuk = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnKas = new System.Windows.Forms.Button();
             this.btnFaktur = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnMaster = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
@@ -206,9 +208,11 @@ namespace tes
             this.panel1.Controls.Add(this.btnClientDebt);
             this.panel1.Controls.Add(this.btnDebt);
             this.panel1.Controls.Add(this.btnlaporan);
+            this.panel1.Controls.Add(this.btnBarangMasuk);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnKas);
             this.panel1.Controls.Add(this.btnFaktur);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnMaster);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.Header);
@@ -226,12 +230,13 @@ namespace tes
             this.btnClientDebt.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnClientDebt.ForeColor = System.Drawing.Color.Silver;
             this.btnClientDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClientDebt.Location = new System.Drawing.Point(0, 380);
+            this.btnClientDebt.Location = new System.Drawing.Point(0, 460);
             this.btnClientDebt.Name = "btnClientDebt";
-            this.btnClientDebt.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClientDebt.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
             this.btnClientDebt.Size = new System.Drawing.Size(200, 40);
-            this.btnClientDebt.TabIndex = 45;
-            this.btnClientDebt.Text = "Laporan Piutang";
+            this.btnClientDebt.TabIndex = 63;
+            this.btnClientDebt.Text = "Piutang";
+            this.btnClientDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnClientDebt.UseCompatibleTextRendering = true;
             this.btnClientDebt.UseVisualStyleBackColor = true;
@@ -246,12 +251,13 @@ namespace tes
             this.btnDebt.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnDebt.ForeColor = System.Drawing.Color.Silver;
             this.btnDebt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDebt.Location = new System.Drawing.Point(0, 340);
+            this.btnDebt.Location = new System.Drawing.Point(0, 420);
             this.btnDebt.Name = "btnDebt";
-            this.btnDebt.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDebt.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
             this.btnDebt.Size = new System.Drawing.Size(200, 40);
-            this.btnDebt.TabIndex = 44;
-            this.btnDebt.Text = "Laporan Hutang";
+            this.btnDebt.TabIndex = 62;
+            this.btnDebt.Text = "Hutang";
+            this.btnDebt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDebt.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDebt.UseCompatibleTextRendering = true;
             this.btnDebt.UseVisualStyleBackColor = true;
@@ -266,17 +272,39 @@ namespace tes
             this.btnlaporan.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnlaporan.ForeColor = System.Drawing.Color.Silver;
             this.btnlaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnlaporan.Location = new System.Drawing.Point(0, 300);
+            this.btnlaporan.Location = new System.Drawing.Point(0, 380);
             this.btnlaporan.Name = "btnlaporan";
-            this.btnlaporan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnlaporan.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
             this.btnlaporan.Size = new System.Drawing.Size(200, 40);
-            this.btnlaporan.TabIndex = 43;
-            this.btnlaporan.Text = "Laporan Penjualan";
+            this.btnlaporan.TabIndex = 61;
+            this.btnlaporan.Text = "Barang Keluar";
+            this.btnlaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnlaporan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnlaporan.UseCompatibleTextRendering = true;
             this.btnlaporan.UseVisualStyleBackColor = true;
             this.btnlaporan.Visible = false;
-            this.btnlaporan.Click += new System.EventHandler(this.btnlaporan_Click);
+            this.btnlaporan.Click += new System.EventHandler(this.btnlaporan_Click_1);
+            // 
+            // btnBarangMasuk
+            // 
+            this.btnBarangMasuk.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBarangMasuk.FlatAppearance.BorderSize = 0;
+            this.btnBarangMasuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBarangMasuk.Font = new System.Drawing.Font("Bahnschrift", 9F);
+            this.btnBarangMasuk.ForeColor = System.Drawing.Color.Silver;
+            this.btnBarangMasuk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBarangMasuk.Location = new System.Drawing.Point(0, 340);
+            this.btnBarangMasuk.Name = "btnBarangMasuk";
+            this.btnBarangMasuk.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnBarangMasuk.Size = new System.Drawing.Size(200, 40);
+            this.btnBarangMasuk.TabIndex = 60;
+            this.btnBarangMasuk.Text = "Barang Masuk";
+            this.btnBarangMasuk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBarangMasuk.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBarangMasuk.UseCompatibleTextRendering = true;
+            this.btnBarangMasuk.UseVisualStyleBackColor = true;
+            this.btnBarangMasuk.Visible = false;
+            this.btnBarangMasuk.Click += new System.EventHandler(this.btnBarangMasuk_Click);
             // 
             // button2
             // 
@@ -287,11 +315,11 @@ namespace tes
             this.button2.ForeColor = System.Drawing.Color.Silver;
             this.button2.Image = global::tes.Properties.Resources.icons8_commercial_24px1;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 260);
+            this.button2.Location = new System.Drawing.Point(0, 300);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(200, 40);
-            this.button2.TabIndex = 42;
+            this.button2.TabIndex = 56;
             this.button2.Text = "  Laporan";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -307,16 +335,16 @@ namespace tes
             this.btnKas.ForeColor = System.Drawing.Color.Silver;
             this.btnKas.Image = global::tes.Properties.Resources.icons8_money_24px;
             this.btnKas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKas.Location = new System.Drawing.Point(0, 220);
+            this.btnKas.Location = new System.Drawing.Point(0, 260);
             this.btnKas.Name = "btnKas";
             this.btnKas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnKas.Size = new System.Drawing.Size(200, 40);
-            this.btnKas.TabIndex = 38;
+            this.btnKas.TabIndex = 55;
             this.btnKas.Text = "  Kas";
             this.btnKas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKas.UseVisualStyleBackColor = true;
-            this.btnKas.Click += new System.EventHandler(this.button1_Click);
+            this.btnKas.Click += new System.EventHandler(this.btnKas_Click);
             // 
             // btnFaktur
             // 
@@ -327,16 +355,36 @@ namespace tes
             this.btnFaktur.ForeColor = System.Drawing.Color.Silver;
             this.btnFaktur.Image = global::tes.Properties.Resources.icons8_ingredients_24px;
             this.btnFaktur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFaktur.Location = new System.Drawing.Point(0, 180);
+            this.btnFaktur.Location = new System.Drawing.Point(0, 220);
             this.btnFaktur.Name = "btnFaktur";
             this.btnFaktur.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnFaktur.Size = new System.Drawing.Size(200, 40);
-            this.btnFaktur.TabIndex = 16;
-            this.btnFaktur.Text = "  Penjualan";
+            this.btnFaktur.TabIndex = 54;
+            this.btnFaktur.Text = "  Barang Keluar";
             this.btnFaktur.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFaktur.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFaktur.UseVisualStyleBackColor = true;
             this.btnFaktur.Click += new System.EventHandler(this.btnFaktur_Click);
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Bahnschrift", 9F);
+            this.button3.ForeColor = System.Drawing.Color.Silver;
+            this.button3.Image = global::tes.Properties.Resources.icons8_return_purchase_24px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 180);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(200, 40);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "  Barang Masuk";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnMaster
             // 
@@ -352,7 +400,7 @@ namespace tes
             this.btnMaster.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnMaster.Size = new System.Drawing.Size(200, 40);
             this.btnMaster.TabIndex = 2;
-            this.btnMaster.Text = "  Stok";
+            this.btnMaster.Text = "  Produk";
             this.btnMaster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMaster.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMaster.UseVisualStyleBackColor = true;
@@ -425,13 +473,15 @@ namespace tes
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnMaster;
-        private System.Windows.Forms.Button btnFaktur;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Button btnBarangMasuk;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnKas;
+        private System.Windows.Forms.Button btnFaktur;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnClientDebt;
         private System.Windows.Forms.Button btnDebt;
         private System.Windows.Forms.Button btnlaporan;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnKas;
-        private System.Windows.Forms.Panel mainPanel;
     }
 }
