@@ -273,7 +273,7 @@ namespace tes
                 }
                 else if (SaveSection == SaveSectionEnum.Update)
                 {
-                    updateData();
+                    UpdateData();
                 }
             }
             loadData();
@@ -400,7 +400,7 @@ namespace tes
             }
         }
 
-        private void updateData()
+        private void UpdateData()
         {
             try
             {
@@ -409,40 +409,45 @@ namespace tes
                 {
                     connection.Open();
 
-                    string kueri = "UPDATE product SET nama_brg = @nama_brg, stok_awal = @stok_awal, suplier = @suplier, " +
-                   "beli = @beli, jual = @jual, mark_up = @mark_up, persentase = @persentase, " +
-                   "masuk = @masuk, keluar = @keluar, stok_akhir = @stok_akhir, " +
-                   "pendapatan = @pendapatan, laba = @laba, harta = @harta WHERE kode_brg = @kode_brg";
+                    string kueri = "UPDATE product SET nama_brg = @nama_brg, stok_awal = @stok_awal, suplier = @suplier, beli = @beli, jual = @jual, mark_up = @mark_up, persentase = @persentase, masuk = @masuk, keluar = @keluar, stok_akhir = @stok_akhir, pendapatan = @pendapatan, laba = @laba, harta = @harta WHERE kode_brg = @kode_brg;";
 
-                    decimal laba = 0;
 
-                    string strLaba = LABA.Text;
+                    string kode_brg = KODEBARANG.Text;
+                    string nama_brg = NAMABARANG.Text;
+                    int stok_awal = int.Parse(S_AWAL.Value.ToString());
+                    int masuk = int.Parse(B_MASUK.Value.ToString());
+                    int keluar = int.Parse(B_KELUAR.Value.ToString());
+                    int stok_akhir = int.Parse(S_AKHIR.Value.ToString());
+                    string sup = DISTRIBUTOR.Text;
+                    decimal beli = decimal.Parse(MODAL.Text);
+                    decimal jual = decimal.Parse(HARGAJUAL1.Text);
+                    decimal markup = decimal.Parse(MARKUP.Text);
+                    decimal pendapatan = decimal.Parse(PENDAPATAN.Text);
 
-                    if(strLaba == "")
-                    {
-                        laba = 0;
-                    }
-                    else
-                    {
-                        laba = decimal.Parse(strLaba);
-                    }
+                    decimal laba = decimal.Parse(LABA.Text);
 
+                    //decimal result = hargaJual - hargaBeli;
+
+                    //string laba = result.ToString();
+                    decimal harta = decimal.Parse(Harta.Text);
+                    string percen = PERCENTASE.Text;
+                    //data
                     using (MySqlCommand cmd = new MySqlCommand(kueri, connection))
                     {
-                        cmd.Parameters.AddWithValue("@kode_brg", KODEBARANG.Text);
-                        cmd.Parameters.AddWithValue("@nama_brg", NAMABARANG.Text);
-                        cmd.Parameters.AddWithValue("@stok_awal", int.Parse(S_AWAL.Value.ToString()));
-                        cmd.Parameters.AddWithValue("@suplier", string.IsNullOrEmpty(DISTRIBUTOR.Text) ? "-" : DISTRIBUTOR.Text);
-                        cmd.Parameters.AddWithValue("@beli", decimal.Parse(MODAL.Text));
-                        cmd.Parameters.AddWithValue("@jual", decimal.Parse(HARGAJUAL1.Text));
-                        cmd.Parameters.AddWithValue("@mark_up", decimal.Parse(MARKUP.Text));
-                        cmd.Parameters.AddWithValue("@masuk", Convert.ToInt32(B_MASUK.Value));
-                        cmd.Parameters.AddWithValue("@keluar", Convert.ToInt32(B_KELUAR.Value));
-                        cmd.Parameters.AddWithValue("@stok_akhir", Convert.ToInt32(S_AKHIR.Value));
-                        cmd.Parameters.AddWithValue("@pendapatan", decimal.Parse(PENDAPATAN.Text));
-                        cmd.Parameters.AddWithValue("@laba", decimal.Parse(laba.ToString()));
-                        cmd.Parameters.AddWithValue("@harta", decimal.Parse(Harta.Text));
-                        cmd.Parameters.AddWithValue("@persentase", PERCENTASE.Text);
+                        cmd.Parameters.AddWithValue("@kode_brg", kode_brg);
+                        cmd.Parameters.AddWithValue("@nama_brg", nama_brg);
+                        cmd.Parameters.AddWithValue("@stok_awal", stok_awal);
+                        cmd.Parameters.AddWithValue("@suplier", sup);
+                        cmd.Parameters.AddWithValue("@beli", beli);
+                        cmd.Parameters.AddWithValue("@jual", jual);
+                        cmd.Parameters.AddWithValue("@mark_up", markup);
+                        cmd.Parameters.AddWithValue("@masuk", masuk);
+                        cmd.Parameters.AddWithValue("@keluar", keluar);
+                        cmd.Parameters.AddWithValue("@stok_akhir", stok_akhir);
+                        cmd.Parameters.AddWithValue("@pendapatan", pendapatan);
+                        cmd.Parameters.AddWithValue("@laba", laba);
+                        cmd.Parameters.AddWithValue("@harta", harta);
+                        cmd.Parameters.AddWithValue("@persentase", percen);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -581,6 +586,8 @@ namespace tes
 
         private void MARKUP_TextChanged(object sender, EventArgs e)
         {
+            if(MARKUP.Text != "")
+            {
                 decimal markup = decimal.Parse(MARKUP.Text.Replace(".", ""));
                 decimal beli = decimal.Parse(MODAL.Text.Replace(".", ""));
 
@@ -591,6 +598,7 @@ namespace tes
                 // Sekarang, labaDibulatkan akan berisi nilai laba dengan 2 angka di belakang koma.
 
                 PERCENTASE.Text = labaDibulatkan;
+            }
         }
     }
 }
